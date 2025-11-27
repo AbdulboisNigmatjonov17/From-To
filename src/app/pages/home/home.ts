@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { TranslateMain } from '../../components/translate-main/translate-main';
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [TranslateMain],
   templateUrl: './home.html',
   styleUrl: './home.css',
   standalone: true
