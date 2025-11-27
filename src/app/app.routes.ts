@@ -2,18 +2,33 @@ import { Routes } from '@angular/router';
 import { Home } from './pages/home/home';
 import { Transliterate } from './pages/transliterate/transliterate';
 import { PdfImageToText } from './pages/pdf-image-to-text/pdf-image-to-text';
+import { HelpForTranslator } from './pages/help-for-translator/help-for-translator';
+import { HowToUse } from './pages/how-to-use/how-to-use';
+import { DeveloperApi } from './pages/developer-api/developer-api';
+import { TermsAndConditions } from './pages/terms-and-conditions/terms-and-conditions';
+import { AboutUs } from './pages/about-us/about-us';
+import { Advertisement } from './pages/advertisement/advertisement';
+import { Sitemap } from './pages/sitemap/sitemap';
+import { TelegramBot } from './pages/telegram-bot/telegram-bot';
+import { Dictionary } from './pages/dictionary/dictionary';
+import { Context } from './pages/context/context';
+import { SignIn } from './pages/auth/sign-in/sign-in';
+import { SignUp } from './pages/auth/sign-up/sign-up';
 
 export const routes: Routes = [
-    {
-        path: '',
-        component: Home
-    },
-    {
-        path: 'transliterate',
-        component: Transliterate
-    },
-    {
-        path: 'pdf-image-to-text',
-        component: PdfImageToText
-    }
+    { path: '', component: Home },
+    { path: 'transliterate', component: Transliterate },
+    { path: 'pdf-image-to-text', component: PdfImageToText },
+    { path: 'help-for-translator', component: HelpForTranslator },
+    { path: 'how-to-use', component: HowToUse },
+    { path: 'developer-api', component: DeveloperApi },
+    { path: 'terms-and-conditions', component: TermsAndConditions },
+    { path: 'about-us', component: AboutUs },
+    { path: 'advertisement', component: Advertisement },
+    { path: 'sitemap', component: Sitemap },
+    { path: 'telegram-bot', component: TelegramBot },
+    { path: 'dictionary', component: Dictionary },
+    { path: 'context', component: Context },
+    { path: 'auth/sign-in', component: SignIn },
+    { path: 'auth/sign-up', component: SignUp }
 ];
