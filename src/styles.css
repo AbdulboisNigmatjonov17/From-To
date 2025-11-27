@@ -2,3 +2,6 @@
 
 @import "tailwindcss";
 @import "primeicons/primeicons.css";
+
+html, body { background-color: #e2e8f0; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

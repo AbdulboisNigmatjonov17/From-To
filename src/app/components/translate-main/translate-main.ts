@@ -16,7 +16,8 @@ import { TranslateService } from '../../services/translate.service';
 })
 export class TranslateMain {
   text = new FormControl<string>('');
-  resultCase = new FormControl<string>('latin');
+  result = new FormControl<string>('');
+  resultCase = 'latin';
   fromLanguages: any[] | undefined;
   toLanguages: any[] | undefined;
 
@@ -62,14 +63,24 @@ export class TranslateMain {
       { label: 'भारतीय', code: 'HI' },
     ]
   }
-  // translate() {
-  //   this.translateService.translateText(this.text.value, this.selectedFromLanguage, this.selectedToLanguage, this.resultCase).
-  //     subscribe((response) => { console.log(response) });
-  // }
   translate() {
-    if (this.text.value && this.resultCase.value) {
-      this.translateService.translateText(this.text.value, this.selectedFromLanguage, this.selectedToLanguage, this.resultCase.value)
-        .subscribe((response) => { console.log(response) });
+    if (this.text.value && this.selectedFromLanguage && this.selectedToLanguage) {
+      this.translateService
+        .translateText(
+          this.text.value,
+          this.selectedFromLanguage,
+          this.selectedToLanguage,
+          this.resultCase || 'latin'
+        )
+        .subscribe({
+          next: (res: any) => {
+            this.result.setValue(res.trans);
+            console.log(res);
+          },
+          error: (err) => {
+            console.error("Error from server" + err);
+          }
+        });
     }
   }
 }
