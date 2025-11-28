@@ -7,6 +7,9 @@ import { FileUpload } from 'primeng/fileupload';
 import { SelectModule } from 'primeng/select';
 import { TextareaModule } from 'primeng/textarea';
 import { TranslateService } from '../../services/translate.service';
+import { Languages, TranslateResponse } from '../../models/Models';
+
+type resultCaseType = 'latin' | 'cyrillic';
 
 @Component({
   selector: 'app-translate-main',
@@ -15,72 +18,62 @@ import { TranslateService } from '../../services/translate.service';
   styleUrl: './translate-main.css',
 })
 export class TranslateMain {
-  text = new FormControl<string>('');
-  result = new FormControl<string>('');
-  resultCase = 'latin';
-  fromLanguages: any[] | undefined;
-  toLanguages: any[] | undefined;
+  languages: Languages[] | undefined;
+  text = new FormControl<string | null>('');
+  resultText = new FormControl<string>('');
+  resultCase: resultCaseType = 'latin';
+  fromLanguages: Languages[] | undefined;
+  toLanguages: Languages[] | undefined;
 
-  selectedFromLanguage: string | undefined;
-  selectedToLanguage: string | undefined;
+  selectedFromLanguage: string = 'Uzbek';
+  selectedToLanguage: string = 'English';
 
-  constructor(private translateService: TranslateService) { }
-  ngOnInit() {
-    this.fromLanguages = [
-      { label: 'English', code: 'EN' },
-      { label: 'Qaraqalpaqsha', code: 'QAR' },
-      { label: 'Русский', code: 'RU' },
-      { label: 'O%20zbekcha', code: 'UZ' },
-      { label: 'Francais', code: 'FR' },
-      { label: '中國人', code: 'CN' },
-      { label: 'Espanol', code: 'es' },
-      { label: 'Italico', code: 'IT' },
-      { label: 'Kirgiz', code: 'KY' },
-      { label: 'Kazakh', code: 'KZ' },
-      { label: 'Tadjik', code: 'TJ' },
-      { label: 'Turkish', code: 'TR' },
-      { label: 'Turkmen', code: 'TK' },
-      { label: 'Portuguese', code: 'PT' },
-      { label: 'Deutsch', code: 'DE' },
-      { label: 'भारतीय', code: 'HI' },
-    ]
-    this.toLanguages = [
-      { label: 'English', code: 'EN' },
-      { label: 'Qaraqalpaqsha', code: 'QAR' },
-      { label: 'Русский', code: 'RU' },
-      { label: 'O%20zbekcha', code: 'UZ' },
-      { label: 'Francais', code: 'FR' },
-      { label: '中國人', code: 'CN' },
-      { label: 'Espanol', code: 'es' },
-      { label: 'Italico', code: 'IT' },
-      { label: 'Kirgiz', code: 'KY' },
-      { label: 'Kazakh', code: 'KZ' },
-      { label: 'Tadjik', code: 'TJ' },
-      { label: 'Turkish', code: 'TR' },
-      { label: 'Turkmen', code: 'TK' },
-      { label: 'Portuguese', code: 'PT' },
-      { label: 'Deutsch', code: 'DE' },
-      { label: 'भारतीय', code: 'HI' },
-    ]
+  constructor(private translateService: TranslateService) {
+    this.getLangs();
+    this.translate();
+    console.log(this.selectedFromLanguage, this.selectedToLanguage);
   }
+
+  getLangs() {
+    this.translateService.getLanguages().subscribe({
+      next: (languages: Languages[]) => {
+        this.fromLanguages = languages;
+        this.toLanguages = languages;
+        console.log(languages);
+        this.translate();
+      },
+      error: (err) => {
+        console.error("Error from server:", err);
+      }
+    });
+  }
+
   translate() {
-    if (this.text.value && this.selectedFromLanguage && this.selectedToLanguage) {
+    if (this.text.value) {
       this.translateService
         .translateText(
           this.text.value,
           this.selectedFromLanguage,
           this.selectedToLanguage,
-          this.resultCase || 'latin'
+          this.resultCase
         )
         .subscribe({
-          next: (res: any) => {
-            this.result.setValue(res.trans);
+          next: (res: TranslateResponse) => {
+            this.resultText.setValue(res.result);
             console.log(res);
           },
           error: (err) => {
-            console.error("Error from server" + err);
+            console.error("Error from server: ", err);
           }
         });
     }
+  }
+
+  swapLangs() {
+    const temp = this.selectedFromLanguage;
+    this.selectedFromLanguage = this.selectedToLanguage;
+    this.selectedToLanguage = temp;
+
+    this.translate();
   }
 }

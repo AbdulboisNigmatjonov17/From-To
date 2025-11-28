@@ -10,38 +10,49 @@
         </button>
     </div>
     <div class="flex flex-row items-center justify-center gap-2 border-b border-[#e2e8f0] p-2 md:gap-6">
-        <p-select [options]="fromLanguages" [(ngModel)]="selectedFromLanguage" optionLabel="lang" [filter]="true"
-            filterBy="label" [showClear]="true" placeholder="Select a Lang" class="w-full md:w-56">
+        <!-- <p-select [options]="fromLanguages" [(ngModel)]="selectedFromLanguage" optionLabel="lang" [filter]="true"
+            filterBy="name" [showClear]="true" placeholder="Select a Lang" class="w-full md:w-56">
             <ng-template #selectedItem let-selectedOption>
                 <div class="flex items-center gap-2">
-                    <div>{{ selectedOption.label }}</div>
+                    <div>{{ selectedOption.name }}</div>
                 </div>
             </ng-template>
-            <ng-template let-name #item>
+            <ng-template let-lang #item>
                 <div class="flex items-center gap-2">
-                    <div>{{ name.label }}</div>
+                    <div>{{ lang.name}}</div>
                 </div>
             </ng-template>
         </p-select>
-        <button class="cursor-pointer"><i class="pi pi-arrow-right-arrow-left"></i></button>
+        <button class="cursor-pointer" (click)="swapLangs()"><i class="pi pi-arrow-right-arrow-left"></i></button>
         <p-select [options]="toLanguages" [(ngModel)]="selectedToLanguage" optionLabel="lang" [filter]="true"
-            filterBy="label" [showClear]="true" placeholder="Select a Lang" class="w-full md:w-56">
+            filterBy="name" [showClear]="true" placeholder="Select a Lang" class="w-full md:w-56">
             <ng-template #selectedItem let-selectedOption>
                 <div class="flex items-center gap-2">
-                    <div>{{ selectedOption.label }}</div>
+                    <div>{{ selectedOption.name }}</div>
                 </div>
             </ng-template>
-            <ng-template let-name #item>
+            <ng-template let-lang #item>
                 <div class="flex items-center gap-2">
-                    <div>{{ name.label }}</div>
+                    <div>{{ lang.name }}</div>
                 </div>
             </ng-template>
+        </p-select> -->
+        <p-select [options]="fromLanguages" [(ngModel)]="selectedFromLanguage" optionLabel="name" optionValue="name"
+            [filter]="true" filterBy="name" [showClear]="true" placeholder="Select a Lang" class="w-full md:w-56">
+        </p-select>
+
+        <button (click)="swapLangs()" class="cursor-pointer">
+            <i class="pi pi-arrow-right-arrow-left"></i>
+        </button>
+
+        <p-select [options]="toLanguages" [(ngModel)]="selectedToLanguage" optionLabel="name" optionValue="name"
+            [filter]="true" filterBy="name" [showClear]="true" placeholder="Select a Lang" class="w-full md:w-56">
         </p-select>
     </div>
     <div class="flex w-full flex-col md:flex-row min-h-[600px] md:min-h-[400px] gap-2 md:gap-0">
         <div class="min-h-full flex flex-col justify-between w-[50%] border-r border-[#e2e8f0]">
-            <textarea [(ngModel)]="text.value" name="text" class="w-full h-[90%]" style="border: none; font-size: 20px;"
-                pTextarea></textarea>
+            <textarea [formControl]="text" class="w-full h-[90%]" style="border: none; font-size: 18px;" pTextarea
+                placeholder="Type your source text here..."></textarea>
             <div class="w-full h-[10%] flex justify-between">
                 <button
                     class="cursor-pointer justify-center rounded-md text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:scale-105 active:scale-95 hover:bg-accent hover:text-accent-foreground text-muted-foreground h-auto p-2 flex items-center gap-2">
@@ -57,7 +68,7 @@
             <p-fileupload name="demo[]" [showUploadButton]="false" [showCancelButton]="false"
                 [style]="{border: 'none'}">
                 <ng-template pTemplate="content" class="border ">
-                    <p>{{result.value}}</p>
+                    <p>{{resultText.value}}</p>
                     <div class="flex items-center justify-center flex-col border-none">
                         <i class="pi pi-cloud-upload" style="font-size: 80px; color: #217aca;"></i>
                         <p class="mt-3 text-base font-medium text-gray-500">Click or drag file to upload.</p>
@@ -68,7 +79,7 @@
                     </div>
                 </ng-template>
             </p-fileupload>
-            @if (result.value) {
+            @if (resultText) {
             <div class="w-full h-[10%] flex justify-between">
                 <button
                     class="cursor-pointer justify-center rounded-md text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:scale-105 active:scale-95 hover:bg-accent hover:text-accent-foreground text-muted-foreground h-auto p-2 flex items-center gap-2">
@@ -80,8 +91,21 @@
     </div>
 </p-card>
 <form class="w-full flex gap-2 justify-end">
-    <input name="latin" type="radio">
+    <input id="latin" name="alphabet" type="radio" value="latin">
     <label for="latin">Latin</label>
-    <input name="cyrillic" type="radio">
+
+    <input id="cyrillic" name="alphabet" type="radio" value="cyrillic">
     <label for="cyrillic">Cyrillic</label>
 </form>
+
+<!-- <p-select [options]="fromLanguages" [(ngModel)]="selectedFromLanguage" optionLabel="label" optionValue="code"
+    [filter]="true" filterBy="name" [showClear]="true" placeholder="Select a Lang" class="w-full md:w-56">
+</p-select>
+
+<button (click)="swapLangs()" class="cursor-pointer">
+    <i class="pi pi-arrow-right-arrow-left"></i>
+</button>
+
+<p-select [options]="toLanguages" [(ngModel)]="selectedToLanguage" optionLabel="label" optionValue="code"
+    [filter]="true" filterBy="label" [showClear]="true" placeholder="Select a Lang" class="w-full md:w-56">
+</p-select> -->

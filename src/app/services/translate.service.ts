@@ -1,17 +1,35 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Languages, TranslateResponse } from '../models/Models';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TranslateService {
-  private url = 'https://api.from-to.uz/api/v1/translate';
-  
+  private translateURL = 'https://api.from-to.uz/api/v1/translate';
+  private transliterateURL = 'https://api.from-to.uz/api/v1/translate';
+  private languagesURL = 'https://cdn.from-to.uz/languages.json';
+
   constructor(private http: HttpClient) { }
+
+  getLanguages() {
+    return this.http.get<Languages[]>(this.languagesURL);
+  }
+
+  transliterateText(text: string, lang_from: string = 'en_latin', lang_to: string = 'uz_latin') {
+    const body = {
+      body: {
+        text,
+        lang_from,
+        lang_to
+      }
+    };
+    return this.http.post<TranslateResponse>(this.transliterateURL, body);
+  }
   translateText(
     text: string,
-    lang_from: string = 'auto',
-    lang_to: string = 'en',
+    lang_from: string = 'en',
+    lang_to: string = 'uz',
     resultCase: string = 'latin'
   ) {
     const body = {
@@ -22,6 +40,7 @@ export class TranslateService {
         resultCase
       }
     };
-    return this.http.post(this.url, body);
+    console.log(body);
+    return this.http.post<TranslateResponse>(this.translateURL, body);
   }
 }
