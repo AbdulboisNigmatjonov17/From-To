@@ -16,7 +16,7 @@ export class TranslateService {
     return this.http.get<Languages[]>(this.languagesURL);
   }
 
-  transliterateText(text: string, lang_from: string = 'en_latin', lang_to: string = 'uz_latin') {
+  transliterateText(text: string | null, lang_from: string, lang_to: string) {
     const body = {
       body: {
         text,
@@ -24,13 +24,14 @@ export class TranslateService {
         lang_to
       }
     };
+    console.log(body);
     return this.http.post<TranslateResponse>(this.transliterateURL, body);
   }
   translateText(
-    text: string,
+    text: string | null,
     lang_from: string,
     lang_to: string,
-    resultCase: string
+    resultCase: string | null
   ) {
     const body = {
       body: {

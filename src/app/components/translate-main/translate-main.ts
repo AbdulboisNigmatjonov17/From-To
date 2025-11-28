@@ -1,15 +1,14 @@
 import { CommonModule } from '@angular/common';
-import { Component, signal, WritableSignal } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Component, ViewChild } from '@angular/core';
+import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { FileUpload } from 'primeng/fileupload';
 import { SelectModule } from 'primeng/select';
 import { TextareaModule } from 'primeng/textarea';
 import { TranslateService } from '../../services/translate.service';
-import { Languages, TranslateResponse } from '../../models/Models';
-
-type resultCaseType = 'latin' | 'cyrillic';
+import { Languages, resultCaseType, TranslateResponse } from '../../models/Models';
+// import { debounceTime, distinctUntilChanged } from 'rxjs';
 
 @Component({
   selector: 'app-translate-main',
@@ -19,18 +18,23 @@ type resultCaseType = 'latin' | 'cyrillic';
 })
 export class TranslateMain {
   languages: Languages[] | undefined;
-  text = signal('');
-  resultText = signal('');
-  resultCase: WritableSignal<resultCaseType> = signal('cyrillic');
+  text = new FormControl<string>('');
+  resultText = new FormControl<string>('');
+  resultCase = new FormControl<resultCaseType>('latin');
   fromLanguages: Languages[] | undefined;
   toLanguages: Languages[] | undefined;
 
-  selectedFromLanguage: string = 'Uzbek';
-  selectedToLanguage: string = 'English';
+  selectedFromLanguage: string = 'uzn_Latn';
+  selectedToLanguage: string = 'eng_Latn';
+
+  @ViewChild('fileUpload') fileUpload!: FileUpload;
+  openFileChooser() {
+    this.fileUpload.choose();
+  }
 
   constructor(private translateService: TranslateService) {
     this.getLangs();
-    console.log(this.selectedFromLanguage, this.selectedToLanguage, this.resultCase());
+    console.log(this.selectedFromLanguage, this.selectedToLanguage, this.resultCase.value);
   }
 
   getLangs() {
@@ -38,7 +42,6 @@ export class TranslateMain {
       next: (languages: Languages[]) => {
         this.fromLanguages = languages;
         this.toLanguages = languages;
-        console.log(languages);
         this.translate();
       },
       error: (err) => {
@@ -48,30 +51,31 @@ export class TranslateMain {
   }
 
   translate() {
-    // if (this.text()) {
     this.translateService
       .translateText(
-        this.text(),
+        this.text.value,
         this.selectedFromLanguage,
         this.selectedToLanguage,
-        this.resultCase()
+        this.resultCase.value
       )
       .subscribe({
         next: (res: TranslateResponse) => {
-          this.resultText.set(res.result);
+          this.resultText.setValue(res.result);
           console.log(res.result);
         },
         error: (err) => {
           console.error("Error from server: ", err);
         }
       });
-    // }
   }
 
   swapLangs() {
     const temp = this.selectedFromLanguage;
     this.selectedFromLanguage = this.selectedToLanguage;
     this.selectedToLanguage = temp;
+    const temp2 = this.text.value;
+    this.text.setValue(this.resultText.value);
+    this.resultText.setValue(temp2);
 
     this.translate();
   }

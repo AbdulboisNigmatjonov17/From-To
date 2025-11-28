@@ -5,3 +5,4 @@ export interface Languages {
 export interface TranslateResponse {
     result: string;
 }
+export type resultCaseType = 'latin' | 'cyrill';

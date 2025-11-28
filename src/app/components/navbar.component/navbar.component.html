@@ -5,9 +5,9 @@
                 <img src="https://from-to.uz/_next/image?url=https%3A%2F%2Fucarecdn.com%2F14b8f635-1310-42ff-bacd-9e8102d62add%2Flogo.png&w=32&q=75"
                     alt="logo">
                 From-To</a>
-            <a routerLink="/" class="hover:text-[#2565EB]">AI Translation</a>
-            <a routerLink="/transliterate" class="hover:text-[#2565EB]">Cyrill to Latin</a>
-            <a routerLink="/pdf-image-to-text" class="hover:text-[#2565EB]">Pdf to Text</a>
+            <a routerLink="/" class="hover:text-[#2565EB] active:text-[#2565EB]">AI Translation</a>
+            <a routerLink="/transliterate" class="hover:text-[#2565EB] active:text-[#2565EB]">Cyrill to Latin</a>
+            <a routerLink="/pdf-image-to-text" class="hover:text-[#2565EB] active:text-[#2565EB]">Pdf to Text</a>
             <p-menu #menu1 [model]="helpOptions" [popup]="true" class="cursor-pointer" />
             <button (click)="menu1.toggle($event)" class="cursor-pointer" icon="pi pi-ellipsis-v">Help<i
                     class="pi pi-chevron-down" style="margin-left: 8px; width: 8px; height: 4px"></i></button>
@@ -50,19 +50,19 @@
                     class="w-10 h-10 bg-[#2A74C5] cursor-pointer flex items-center justify-center rounded-full bg-muted text-sm font-medium">
                     <i class="pi pi-user" style="color: white;"></i>
                 </button>
-                <!-- <div>
-                    <div>
-                        <button
-                            class="w-10 h-10 bg-[#2A74C5] flex items-center justify-center rounded-full bg-muted text-sm font-medium">
-                            <i class="pi pi-user" style="color: white;"></i>
-                        </button>
-                    </div>
-                    <div>
-                        <button><i class="pi pi-user-plus"></i> Sign in</button>
-                        <button><i class="pi pi-sign-out"></i> Sign up</button>
-                    </div>
-                </div> -->
             </div>
         </div>
     </div>
 </nav>
+<!-- <div>
+    <div>
+        <button
+            class="w-10 h-10 bg-[#2A74C5] flex items-center justify-center rounded-full bg-muted text-sm font-medium">
+            <i class="pi pi-user" style="color: white;"></i>
+        </button>
+    </div>
+    <div>
+        <button><i class="pi pi-user-plus"></i> Sign in</button>
+        <button><i class="pi pi-sign-out"></i> Sign up</button>
+    </div>
+</div> -->
