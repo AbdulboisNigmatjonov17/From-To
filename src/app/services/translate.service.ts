@@ -28,9 +28,9 @@ export class TranslateService {
   }
   translateText(
     text: string,
-    lang_from: string = 'en',
-    lang_to: string = 'uz',
-    resultCase: string = 'latin'
+    lang_from: string,
+    lang_to: string,
+    resultCase: string
   ) {
     const body = {
       body: {

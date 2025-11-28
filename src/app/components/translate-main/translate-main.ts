@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Component, signal, WritableSignal } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { FileUpload } from 'primeng/fileupload';
@@ -19,9 +19,9 @@ type resultCaseType = 'latin' | 'cyrillic';
 })
 export class TranslateMain {
   languages: Languages[] | undefined;
-  text = new FormControl<string | null>('');
-  resultText = new FormControl<string>('');
-  resultCase: resultCaseType = 'latin';
+  text = signal('');
+  resultText = signal('');
+  resultCase: WritableSignal<resultCaseType> = signal('cyrillic');
   fromLanguages: Languages[] | undefined;
   toLanguages: Languages[] | undefined;
 
@@ -30,8 +30,7 @@ export class TranslateMain {
 
   constructor(private translateService: TranslateService) {
     this.getLangs();
-    this.translate();
-    console.log(this.selectedFromLanguage, this.selectedToLanguage);
+    console.log(this.selectedFromLanguage, this.selectedToLanguage, this.resultCase());
   }
 
   getLangs() {
@@ -49,24 +48,24 @@ export class TranslateMain {
   }
 
   translate() {
-    if (this.text.value) {
-      this.translateService
-        .translateText(
-          this.text.value,
-          this.selectedFromLanguage,
-          this.selectedToLanguage,
-          this.resultCase
-        )
-        .subscribe({
-          next: (res: TranslateResponse) => {
-            this.resultText.setValue(res.result);
-            console.log(res);
-          },
-          error: (err) => {
-            console.error("Error from server: ", err);
-          }
-        });
-    }
+    // if (this.text()) {
+    this.translateService
+      .translateText(
+        this.text(),
+        this.selectedFromLanguage,
+        this.selectedToLanguage,
+        this.resultCase()
+      )
+      .subscribe({
+        next: (res: TranslateResponse) => {
+          this.resultText.set(res.result);
+          console.log(res.result);
+        },
+        error: (err) => {
+          console.error("Error from server: ", err);
+        }
+      });
+    // }
   }
 
   swapLangs() {
