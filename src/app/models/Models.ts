@@ -5,5 +5,12 @@ export interface Languages {
 export interface TranslateResponse {
     result: string;
 }
-export type resultCaseType = 'latin' | 'cyrill';
+export interface Itransliterate {
+    from: string
+    fromCode: string
+    to: string
+    toCode: string
+}
+
 export type btnType = 'true' | 'false';
+export type resultCaseType = 'latin' | 'cyrill';
