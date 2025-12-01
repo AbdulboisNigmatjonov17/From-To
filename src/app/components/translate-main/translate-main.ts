@@ -7,7 +7,7 @@ import { FileUpload } from 'primeng/fileupload';
 import { SelectModule } from 'primeng/select';
 import { TextareaModule } from 'primeng/textarea';
 import { TranslateService } from '../../services/translate.service';
-import { Languages, resultCaseType, TranslateResponse } from '../../models/Models';
+import { btnType, Languages, resultCaseType, TranslateResponse } from '../../models/Models';
 // import { debounceTime, distinctUntilChanged } from 'rxjs';
 
 @Component({
@@ -26,6 +26,8 @@ export class TranslateMain {
 
   selectedFromLanguage: string = 'uzn_Latn';
   selectedToLanguage: string = 'eng_Latn';
+
+  btn: btnType = 'true';
 
   @ViewChild('fileUpload') fileUpload!: FileUpload;
   openFileChooser() {

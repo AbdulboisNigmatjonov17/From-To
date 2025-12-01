@@ -14,6 +14,7 @@ import { Dictionary } from './pages/dictionary/dictionary';
 import { Context } from './pages/context/context';
 import { SignIn } from './pages/auth/sign-in/sign-in';
 import { SignUp } from './pages/auth/sign-up/sign-up';
+import { PdfToText } from './components/pdf-to-text/pdf-to-text';
 
 export const routes: Routes = [
     { path: '', component: Home },
@@ -30,5 +31,7 @@ export const routes: Routes = [
     { path: 'dictionary', component: Dictionary },
     { path: 'context', component: Context },
     { path: 'auth/sign-in', component: SignIn },
-    { path: 'auth/sign-up', component: SignUp }
+    { path: 'auth/sign-up', component: SignUp },
+    { path: 'pdf-image-to-text/:lang', component: PdfToText },
+    { path: '**', redirectTo: '' }
 ];
