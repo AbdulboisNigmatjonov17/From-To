@@ -1,21 +1,21 @@
-import { CommonModule } from '@angular/common';
 import { Component, ViewChild } from '@angular/core';
-import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ButtonModule } from 'primeng/button';
-import { CardModule } from 'primeng/card';
-import { FileUpload } from 'primeng/fileupload';
-import { SelectModule } from 'primeng/select';
-import { TextareaModule } from 'primeng/textarea';
 import { TranslateService } from '../../services/translate.service';
 import { Languages, resultCaseType, TranslateResponse } from '../../models/Models';
+import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FileUpload } from 'primeng/fileupload';
+import { ButtonModule } from 'primeng/button';
+import { TextareaModule } from 'primeng/textarea';
+import { CardModule } from 'primeng/card';
+import { SelectModule } from 'primeng/select';
+import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-translate-main',
+  selector: 'app-translate-cyrill',
   imports: [CommonModule, ReactiveFormsModule, FormsModule, SelectModule, CardModule, TextareaModule, ButtonModule, FileUpload],
-  templateUrl: './translate-main.html',
-  styleUrl: './translate-main.css',
+  templateUrl: './translate-cyrill.html',
+  styleUrl: './translate-cyrill.css',
 })
-export class TranslateMain {
+export class TranslateCyrill {
   languages: Languages[] | undefined;
   text = new FormControl<string>('');
   resultText = new FormControl<string>('');
@@ -30,7 +30,7 @@ export class TranslateMain {
   openFileChooser() {
     this.fileUpload.choose();
   }
-  constructor(private translateService: TranslateService,) {
+  constructor(private translateService: TranslateService) {
     this.getLangs();
   }
   getLangs() {
@@ -45,7 +45,6 @@ export class TranslateMain {
       }
     });
   }
-
   translate() {
     this.translateService
       .translateText(
@@ -64,7 +63,6 @@ export class TranslateMain {
         }
       });
   }
-
   swapLangs() {
     const temp = this.selectedFromLanguage;
     this.selectedFromLanguage = this.selectedToLanguage;

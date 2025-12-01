@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { TranslateMain } from '../../components/translate-main/translate-main';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { Languages, TranslateResponse } from '../../models/Models';
 import { TranslateService } from '../../services/translate.service';
+import { TranslateCyrill } from '../../components/translate-cyrill/translate-cyrill';
 
 @Component({
   selector: 'app-transliterate',
-  imports: [TranslateMain, ReactiveFormsModule],
+  imports: [TranslateCyrill, ReactiveFormsModule],
   templateUrl: './transliterate.html',
   styleUrl: './transliterate.css',
 })
