@@ -38,7 +38,6 @@ export class TranslateMain {
       next: (languages: Languages[]) => {
         this.fromLanguages = languages;
         this.toLanguages = languages;
-        this.translate();
       },
       error: (err) => {
         console.error("Error from server:", err);
@@ -57,7 +56,7 @@ export class TranslateMain {
       .subscribe({
         next: (res: TranslateResponse) => {
           this.resultText.setValue(res.result);
-          console.log(res.result);
+          // console.log(res.result);
         },
         error: (err) => {
           console.error("Error from server: ", err);

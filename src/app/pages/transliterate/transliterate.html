@@ -1,6 +1,6 @@
 <div class="p-5">
     <div class="bg-white rounded-2xl">
-        <app-translate-cyrill [languages]="languages || []"></app-translate-cyrill>
+        <app-translate-cyrill [alone]="alone"></app-translate-cyrill>
         <div class="flex flex-col items-center mt-10">
             <h1
                 class="text-3xl font-bold mb-2 bg-linear-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
@@ -9,7 +9,7 @@
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-5">
             @for (item of languages; track $index) {
-            <a
+            <a [routerLink]="['/transliterate', item.fromCode, item.toCode]"
                 class="flex cursor-pointer gap-4 p-4 rounded-lg border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all duration-200 bg-white hover:bg-blue-50">
                 <div class="flex items-center gap-3">
                     <div

@@ -1,6 +1,6 @@
 import { Component, Input, ViewChild } from '@angular/core';
 import { TranslateService } from '../../services/translate.service';
-import { Itransliterate, Languages, resultCaseType, TranslateResponse } from '../../models/Models';
+import { btnType, Itransliterate, TranslateResponse } from '../../models/Models';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FileUpload } from 'primeng/fileupload';
 import { ButtonModule } from 'primeng/button';
@@ -9,6 +9,7 @@ import { CardModule } from 'primeng/card';
 import { SelectModule } from 'primeng/select';
 import { CommonModule } from '@angular/common';
 import { transliterateData } from '../../../data/transliterateData';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-translate-cyrill',
@@ -17,37 +18,33 @@ import { transliterateData } from '../../../data/transliterateData';
   styleUrl: './translate-cyrill.css',
 })
 export class TranslateCyrill {
-  @Input() languages: Itransliterate[] = transliterateData;
-  // languages: Languages[] | undefined;
+  @Input() alone: btnType = 'false';
+  languages: Itransliterate[] = transliterateData;
   text = new FormControl<string>('');
   resultText = new FormControl<string>('');
   fromLanguages: Itransliterate[] | undefined;
   toLanguages: Itransliterate[] | undefined;
 
-  selectedFromLanguage: string = 'uz_latin';
-  selectedToLanguage: string = 'uz_cyrillic';
+  selectedFromLanguage: string = '';
+  selectedToLanguage: string = '';
+
+  langName: string = '';
 
   @ViewChild('fileUpload') fileUpload!: FileUpload;
   openFileChooser() {
     this.fileUpload.choose();
   }
-  constructor(private translateService: TranslateService) {
-    console.log(this.languages);
-
-    this.getLangs();
-  }
-  getLangs() {
-    // this.translateService.getLanguages().subscribe({
-    //   next: (languages: Languages[]) => {
+  constructor(private translateService: TranslateService, private route: ActivatedRoute) {
     this.fromLanguages = this.languages;
     this.toLanguages = this.languages;
-    //     this.translate();
-    //   },
-    //   error: (err) => {
-    //     console.error("Error from server:", err);
-    //   }
-    // });
+
+    this.route.paramMap.subscribe(params => {
+      this.selectedFromLanguage = params.get('from') || 'uz_latin';
+      this.selectedToLanguage = params.get('to') || 'uz_cyrillic';
+    });
+    // console.log(this.selectedFromLanguage, this.selectedToLanguage);
   }
+
   translate() {
     this.translateService
       .transliterateText(
@@ -58,7 +55,7 @@ export class TranslateCyrill {
       .subscribe({
         next: (res: TranslateResponse) => {
           this.resultText.setValue(res.result);
-          console.log(res.result);
+          // console.log(res.result);
         },
         error: (err) => {
           console.error("Error from server: ", err);

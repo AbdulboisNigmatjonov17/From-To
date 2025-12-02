@@ -24,7 +24,7 @@ export class TranslateService {
         text
       }
     };
-    console.log(body);
+    // console.log(body);
     return this.http.post<TranslateResponse>(this.transliterateURL, body);
   }
   translateText(
@@ -41,7 +41,7 @@ export class TranslateService {
         resultCase
       }
     };
-    console.log(body);
+    // console.log(body);
     return this.http.post<TranslateResponse>(this.translateURL, body);
   }
 }

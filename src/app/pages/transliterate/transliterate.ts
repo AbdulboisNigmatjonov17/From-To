@@ -1,21 +1,18 @@
 import { Component } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { Itransliterate } from '../../models/Models';
-import { TranslateService } from '../../services/translate.service';
+import { btnType, Itransliterate } from '../../models/Models';
 import { TranslateCyrill } from '../../components/translate-cyrill/translate-cyrill';
 import { transliterateData } from '../../../data/transliterateData';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-transliterate',
-  imports: [TranslateCyrill, ReactiveFormsModule],
+  imports: [TranslateCyrill, ReactiveFormsModule, RouterLink],
   templateUrl: './transliterate.html',
   styleUrl: './transliterate.css',
+  standalone: true
 })
 export class Transliterate {
-  languages: Itransliterate[] | undefined = transliterateData;
-
-  constructor(private translateService: TranslateService) {
-    // console.log(this.languages);
-  }
-
+  languages: Itransliterate[] = transliterateData;
+  alone: btnType = 'true'
 }
