@@ -1,31 +1,31 @@
 <div class="p-5">
     <div class="bg-white rounded-2xl">
-        <app-translate-cyrill></app-translate-cyrill>
-        <div class="flex flex-col items-center">
+        <app-translate-cyrill [languages]="languages || []"></app-translate-cyrill>
+        <div class="flex flex-col items-center mt-10">
             <h1
                 class="text-3xl font-bold mb-2 bg-linear-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
                 Transliterate</h1>
             <p class="text-[#4b5563]">Convert text between different scripts and writing systems</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-5">
+            @for (item of languages; track $index) {
             <a
                 class="flex cursor-pointer gap-4 p-4 rounded-lg border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all duration-200 bg-white hover:bg-blue-50">
                 <div class="flex items-center gap-3">
                     <div
                         class="flex w-10 h-10 bg-linear-to-r from-blue-500 to-indigo-500 rounded-lg items-center justify-center">
-                        <span class="text-white font-bold text-sm">U</span>
+                        <span class="text-white font-bold text-sm">{{item.from.slice(0, 1)}}</span>
                     </div>
                 </div>
                 <div class="flex-1 min-w-0">
-                    <h3 class="font-medium text-gray-900 group-hover:text-blue-700 transition-colors">Uzbek Latin →
-                        Uzbek Cyrillic
-                        Latin</h3>
-                    <p class="text-sm text-gray-500 truncate">Convert Uzbek Latin to Uzbek Cyrillic</p>
+                    <h3 class="font-medium text-gray-900 group-hover:text-blue-700 transition-colors">{{item.from}} →
+                        {{item.to}}</h3>
+                    <p class="text-sm text-gray-500 truncate">Convert {{item.from}} to {{item.to}}</p>
                 </div>
                 <div class="flex items-center">
                     <i class="pi pi-angle-right" style="color: #9ca3af;"></i>
                 </div>
-            </a>
+            </a>}
         </div>
     </div>
 </div>

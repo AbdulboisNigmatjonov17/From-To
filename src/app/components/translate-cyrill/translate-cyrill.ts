@@ -1,6 +1,6 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
 import { TranslateService } from '../../services/translate.service';
-import { Languages, resultCaseType, TranslateResponse } from '../../models/Models';
+import { Itransliterate, Languages, resultCaseType, TranslateResponse } from '../../models/Models';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FileUpload } from 'primeng/fileupload';
 import { ButtonModule } from 'primeng/button';
@@ -8,6 +8,7 @@ import { TextareaModule } from 'primeng/textarea';
 import { CardModule } from 'primeng/card';
 import { SelectModule } from 'primeng/select';
 import { CommonModule } from '@angular/common';
+import { transliterateData } from '../../../data/transliterateData';
 
 @Component({
   selector: 'app-translate-cyrill',
@@ -16,42 +17,43 @@ import { CommonModule } from '@angular/common';
   styleUrl: './translate-cyrill.css',
 })
 export class TranslateCyrill {
-  languages: Languages[] | undefined;
+  @Input() languages: Itransliterate[] = transliterateData;
+  // languages: Languages[] | undefined;
   text = new FormControl<string>('');
   resultText = new FormControl<string>('');
-  resultCase = new FormControl<resultCaseType>('latin');
-  fromLanguages: Languages[] | undefined;
-  toLanguages: Languages[] | undefined;
+  fromLanguages: Itransliterate[] | undefined;
+  toLanguages: Itransliterate[] | undefined;
 
-  selectedFromLanguage: string = 'uzn_Latn';
-  selectedToLanguage: string = 'eng_Latn';
+  selectedFromLanguage: string = 'uz_latin';
+  selectedToLanguage: string = 'uz_cyrillic';
 
   @ViewChild('fileUpload') fileUpload!: FileUpload;
   openFileChooser() {
     this.fileUpload.choose();
   }
   constructor(private translateService: TranslateService) {
+    console.log(this.languages);
+
     this.getLangs();
   }
   getLangs() {
-    this.translateService.getLanguages().subscribe({
-      next: (languages: Languages[]) => {
-        this.fromLanguages = languages;
-        this.toLanguages = languages;
-        this.translate();
-      },
-      error: (err) => {
-        console.error("Error from server:", err);
-      }
-    });
+    // this.translateService.getLanguages().subscribe({
+    //   next: (languages: Languages[]) => {
+    this.fromLanguages = this.languages;
+    this.toLanguages = this.languages;
+    //     this.translate();
+    //   },
+    //   error: (err) => {
+    //     console.error("Error from server:", err);
+    //   }
+    // });
   }
   translate() {
     this.translateService
-      .translateText(
+      .transliterateText(
         this.text.value,
         this.selectedFromLanguage,
-        this.selectedToLanguage,
-        this.resultCase.value
+        this.selectedToLanguage
       )
       .subscribe({
         next: (res: TranslateResponse) => {

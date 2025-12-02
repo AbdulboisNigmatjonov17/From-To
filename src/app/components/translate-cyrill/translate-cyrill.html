@@ -1,7 +1,7 @@
 <p-card class="p-0 min-w-6xl h-full rounded-lg border border-[#e2e8f0] bg-card text-card-foreground shadow-sm">
     <div class="flex flex-row items-center justify-center gap-2 border-b border-[#e2e8f0] p-2 md:gap-6">
         <p-select [options]="fromLanguages" [(ngModel)]="selectedFromLanguage" (ngModelChange)="translate()"
-            optionLabel="name" optionValue="code" [filter]="true" filterBy="name" [showClear]="true"
+            optionLabel="from" optionValue="fromCode" [filter]="true" filterBy="from" [showClear]="true"
             placeholder="Select a Lang" class="w-full md:w-56">
         </p-select>
 
@@ -10,7 +10,7 @@
         </button>
 
         <p-select [options]="toLanguages" [(ngModel)]="selectedToLanguage" (ngModelChange)="translate()"
-            optionLabel="name" optionValue="code" [filter]="true" filterBy="name" [showClear]="true"
+            optionLabel="to" optionValue="toCode" [filter]="true" filterBy="to" [showClear]="true"
             placeholder="Select a Lang" class="w-full md:w-56">
         </p-select>
     </div>

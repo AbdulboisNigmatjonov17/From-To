@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { FormControl, ReactiveFormsModule } from '@angular/forms';
-import { Itransliterate, Languages, TranslateResponse } from '../../models/Models';
+import { ReactiveFormsModule } from '@angular/forms';
+import { Itransliterate } from '../../models/Models';
 import { TranslateService } from '../../services/translate.service';
 import { TranslateCyrill } from '../../components/translate-cyrill/translate-cyrill';
+import { transliterateData } from '../../../data/transliterateData';
 
 @Component({
   selector: 'app-transliterate',
@@ -11,11 +12,10 @@ import { TranslateCyrill } from '../../components/translate-cyrill/translate-cyr
   styleUrl: './transliterate.css',
 })
 export class Transliterate {
-  languages: Itransliterate[] | undefined;
+  languages: Itransliterate[] | undefined = transliterateData;
 
   constructor(private translateService: TranslateService) {
-    // this.getLangs();
-    console.log();
+    // console.log(this.languages);
   }
 
 }
