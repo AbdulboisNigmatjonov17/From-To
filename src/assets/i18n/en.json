@@ -1,0 +1,17 @@
+{
+    "navbar": {
+        "AITranslation": "AI Translation",
+        "CyrillToLatin": "Cyrill to Latin",
+        "PdfToText": "PDF to Text",
+        "help": "help",
+        "helps": {
+            "HelpForTranslator": "Help for Translator",
+            "HowToUse": "How to Use",
+            "ApiForDeveloper": "API for Developers",
+            "TermsAndConditions": "Terms and Conditions",
+            "AboutUs": "About Us",
+            "Advertisement": "Advertisement",
+            "Sitemap": "Sitemap"
+        }
+    }
+}

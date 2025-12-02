@@ -42,7 +42,7 @@ export class NavbarComponent {
       { label: 'Context', icon: 'pi pi-comment', routerLink: '/context' },
     ]
     this.langOptions = [
-      { label: 'English' }, { label: 'Qaraqalpaqsha' }, { label: 'Русский' }, { label: 'O%20zbekcha' },
+      { label: 'English'}, { label: 'Qaraqalpaqsha' }, { label: 'Русский' }, { label: 'Uzbekcha' },
       { label: 'Francais' }, { label: '中國人' }, { label: 'Espanol' },
       { label: 'Italico' }, { label: 'Kirgiz' }, { label: 'Kazakh' },
       { label: 'Tadjik' }, { label: 'Turkish' }, { label: 'Turkmen' },
