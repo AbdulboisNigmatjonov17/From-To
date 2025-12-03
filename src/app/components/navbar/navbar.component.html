@@ -5,12 +5,15 @@
                 <img src="https://from-to.uz/_next/image?url=https%3A%2F%2Fucarecdn.com%2F14b8f635-1310-42ff-bacd-9e8102d62add%2Flogo.png&w=32&q=75"
                     alt="logo">
                 From-To</a>
-            <a routerLink="/" class="hover:text-[#2565EB] active:text-[#2565EB]">AI Translation</a>
-            <a routerLink="/transliterate" class="hover:text-[#2565EB] active:text-[#2565EB]">Cyrill to Latin</a>
-            <a routerLink="/pdf-image-to-text" class="hover:text-[#2565EB] active:text-[#2565EB]">Pdf to Text</a>
+            <a routerLink="/" class="hover:text-[#2565EB] active:text-[#2565EB]">{{"navbar.AITranslation" |
+                translate}}</a>
+            <a routerLink="/transliterate" class="hover:text-[#2565EB] active:text-[#2565EB]">{{"navbar.CyrillToLatin" |
+                translate}}</a>
+            <a routerLink="/pdf-image-to-text" class="hover:text-[#2565EB] active:text-[#2565EB]">{{"navbar.PdfToText" |
+                translate}}</a>
             <p-menu #menu1 [model]="helpOptions" [popup]="true" class="cursor-pointer" />
-            <button (click)="menu1.toggle($event)" class="cursor-pointer" icon="pi pi-ellipsis-v">Help<i
-                    class="pi pi-chevron-down" style="margin-left: 8px; width: 8px; height: 4px"></i></button>
+            <button (click)="menu1.toggle($event)" class="cursor-pointer" icon="pi pi-ellipsis-v">{{"navbar.help" |
+                translate}}<i class="pi pi-chevron-down" style="margin-left: 8px; width: 8px; height: 4px"></i></button>
         </div>
         <div class="w-[170px] h-full flex items-center">
             <p-menu #menu2 [model]="themeOptions" [popup]="true" class="cursor-pointer" />
@@ -39,10 +42,16 @@
             </div>
             <div>
                 <p-menu #menu4 [model]="langOptions" [popup]="true" class="cursor-pointer" />
-                <button (click)="menu4.toggle($event);"
+                <!-- <button (click)="menu4.toggle($event);"
                     class="w-10 h-10 cursor-pointer flex items-center justify-center font-medium transition-colors text-black/60 hover:text-black/80">
                     <i class="pi pi-language" style="font-size: 24px;"></i>
+                </button> -->
+                <button
+                    class="w-10 h-10 cursor-pointer flex items-center justify-center font-medium transition-colors text-black/60 hover:text-black/80"
+                *ngFor="let lang of langOptions" (click)="changeLang(lang.code); menu4.toggle($event)">
+                {{ lang.label }}
                 </button>
+
             </div>
             <div>
                 <p-menu #menu5 [model]="profileOptions" [popup]="true" class="cursor-pointer" />

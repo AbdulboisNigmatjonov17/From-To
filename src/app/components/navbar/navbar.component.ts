@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from "@angular/router";
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { ButtonModule } from 'primeng/button';
-import { Menu } from 'primeng/menu';
-
+import { MenuModule } from 'primeng/menu';
+// import translationsEN from '../../../../public/i18n/en.json';
 @Component({
   selector: 'app-navbar',
-  imports: [RouterLink, FormsModule, ButtonModule, Menu],
+  imports: [RouterLink, FormsModule, ButtonModule, MenuModule, TranslatePipe],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
 })
@@ -14,11 +15,25 @@ export class NavbarComponent {
   helpOptions: any[] | undefined;
   themeOptions: any[] | undefined;
   options: any[] | undefined;
-  langOptions: any[] | undefined;
+  // langOptions: any[] | undefined;
   profileOptions: any[] | undefined;
 
-  constructor(private router: Router) { }
+  private translate = inject(TranslateService);
 
+  langOptions = [
+    { label: "English", code: "en" },
+    { label: "Русский", code: "ru" },
+    { label: "O‘zbekcha", code: "uz" },
+  ];
+
+  changeLang(code: string) {
+    this.translate.use(code);
+  }
+
+  constructor(private router: Router) {
+    //   this.translate.setTranslation('en', translationsEN);
+    //   this.translate.setFallbackLang('en');
+  }
   ngOnInit() {
     this.helpOptions = [
       { label: 'Help for a Translator', routerLink: '/help-for-translator' },
@@ -41,13 +56,13 @@ export class NavbarComponent {
       { label: 'Dictionary', icon: 'pi pi-book', routerLink: '/dictionary' },
       { label: 'Context', icon: 'pi pi-comment', routerLink: '/context' },
     ]
-    this.langOptions = [
-      { label: 'English'}, { label: 'Qaraqalpaqsha' }, { label: 'Русский' }, { label: 'Uzbekcha' },
-      { label: 'Francais' }, { label: '中國人' }, { label: 'Espanol' },
-      { label: 'Italico' }, { label: 'Kirgiz' }, { label: 'Kazakh' },
-      { label: 'Tadjik' }, { label: 'Turkish' }, { label: 'Turkmen' },
-      { label: 'Portuguese' }, { label: 'Deutsch' }, { label: 'भारतीय' }
-    ];
+    // this.langOptions = [
+    //   { label: 'English' }, { label: 'Qaraqalpaqsha' }, { label: 'Русский' }, { label: 'Uzbekcha' },
+    //   { label: 'Francais' }, { label: '中國人' }, { label: 'Espanol' },
+    //   { label: 'Italico' }, { label: 'Kirgiz' }, { label: 'Kazakh' },
+    //   { label: 'Tadjik' }, { label: 'Turkish' }, { label: 'Turkmen' },
+    //   { label: 'Portuguese' }, { label: 'Deutsch' }, { label: 'भारतीय' }
+    // ];
     this.profileOptions = [
       { label: 'Account', icon: 'pi pi-user' },
       { label: 'Sign in', icon: 'pi pi-user-plus', routerLink: '/auth/sign-in' },
