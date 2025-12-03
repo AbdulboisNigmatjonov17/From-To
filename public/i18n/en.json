@@ -28,20 +28,20 @@
         "langOptions": {
             "English": "English",
             "Qaraqalpaq": "Qaraqalpaqsha",
-            "Russian": "Русский",
-            "Uzbek": "Uzbekcha",
+            "Russian": "Русский",
+            "Uzbek": "Uzbek",
             "French": "Francais",
             "Chinese": "中國人",
-            "Espanol": "Espanol",
+            "Español": "Español",
             "Italico": "Italico",
-            "Kirgiz": "Kirgiz",
+            "Kyrgyz": "Kyrgyz",
             "Kazakh": "Kazakh",
             "Tadjik": "Tadjik",
             "Turkish": "Turkish",
             "Turkmen": "Turkmen",
             "Portuguese": "Portuguese",
             "Deutsch": "Deutsch",
-            "Indian": "भारतीय xaxaxa"
+            "Indian": "भारतीय"
         },
         "profileOptions": {
             "Login": "Sign in",

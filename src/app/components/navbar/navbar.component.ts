@@ -1,72 +1,167 @@
-import { Component, inject } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from "@angular/router";
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { ButtonModule } from 'primeng/button';
 import { MenuModule } from 'primeng/menu';
-// import translationsEN from '../../../../public/i18n/en.json';
+
 @Component({
   selector: 'app-navbar',
-  imports: [RouterLink, FormsModule, ButtonModule, MenuModule, TranslatePipe],
+  imports: [RouterLink, CommonModule, FormsModule, ButtonModule, MenuModule, TranslatePipe],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
 })
 export class NavbarComponent {
-  helpOptions: any[] | undefined;
-  themeOptions: any[] | undefined;
-  options: any[] | undefined;
-  // langOptions: any[] | undefined;
-  profileOptions: any[] | undefined;
+  helpOptions: any[] = [];
+  themeOptions: any[] = [];
+  options: any[] = [];
+  langOptions: any[] = [];
+  profileOptions: any[] = [];
 
-  private translate = inject(TranslateService);
+  constructor(private translate: TranslateService, private router: Router) {
+    this.translate.onLangChange.subscribe(() => {
+      this.buildAllMenus();
+    });
 
-  langOptions = [
-    { label: "English", code: "en" },
-    { label: "Русский", code: "ru" },
-    { label: "O‘zbekcha", code: "uz" },
-  ];
+    this.buildAllMenus();
+  }
+
+  buildAllMenus() {
+    this.buildHelpOptions();
+    this.buildThemeOptions();
+    this.buildOptions();
+    this.buildLangOptions();
+    this.buildProfileOptions();
+  }
+
+  buildHelpOptions() {
+    const keys = [
+      'navbar.helps.HelpForTranslator',
+      'navbar.helps.HowToUse',
+      'navbar.helps.ApiForDeveloper',
+      'navbar.helps.TermsAndConditions',
+      'navbar.helps.AboutUs',
+      'navbar.helps.Advertisement',
+      'navbar.helps.Sitemap'
+    ];
+
+    const routes = [
+      '/help-for-translator',
+      '/how-to-use',
+      '/developer-api',
+      '/terms-and-conditions',
+      '/about-us',
+      '/advertisement',
+      '/sitemap'
+    ];
+
+    this.helpOptions = keys.map((key, i) => ({
+      label: this.translate.instant(key),
+      routerLink: routes[i]
+    }));
+  }
+
+  buildThemeOptions() {
+    const keys = [
+      'navbar.themes.Light',
+      'navbar.themes.Dark',
+      'navbar.themes.System',
+      'navbar.themes.OldTheme'
+    ];
+
+    const icons = [
+      'pi pi-circle',
+      'pi pi-circle-fill',
+      'pi pi-desktop',
+      ''
+    ];
+
+    this.themeOptions = keys.map((key, i) => ({
+      label: this.translate.instant(key),
+      icon: icons[i]
+    }));
+  }
+
+  buildOptions() {
+    const keys = [
+      'navbar.options.ServiceOfTranslators',
+      'navbar.options.TelegramBot',
+      'navbar.options.Dictionary',
+      'navbar.options.Context'
+    ];
+
+    const icons = [
+      'pi pi-address-book',
+      'pi pi-send',
+      'pi pi-book',
+      'pi pi-comment'
+    ];
+
+    const routerLinks = [
+      '',
+      '/telegram-bot',
+      '/dictionary',
+      '/context'
+    ];
+
+    this.options = keys.map((key, i) => ({
+      label: this.translate.instant(key),
+      icon: icons[i],
+      routerLink: routerLinks[i] || undefined
+    }));
+  }
+
+  buildLangOptions() {
+    const keys = [
+      { code: "en", key: "navbar.langOptions.English" },
+      { code: "qq", key: "navbar.langOptions.Qaraqalpaq" },
+      { code: "ru", key: "navbar.langOptions.Russian" },
+      { code: "uz", key: "navbar.langOptions.Uzbek" },
+      { code: "fr", key: "navbar.langOptions.French" },
+      { code: "zh", key: "navbar.langOptions.Chinese" },
+      { code: "es", key: "navbar.langOptions.Espanol" },
+      { code: "it", key: "navbar.langOptions.Italico" },
+      { code: "kg", key: "navbar.langOptions.Kirgiz" }, 
+      { code: "kk", key: "navbar.langOptions.Kazakh" },
+      { code: "tj", key: "navbar.langOptions.Tadjik" },
+      { code: "tr", key: "navbar.langOptions.Turkish" },
+      { code: "tm", key: "navbar.langOptions.Turkmen" },
+      { code: "pt", key: "navbar.langOptions.Portuguese" },
+      { code: "de", key: "navbar.langOptions.Deutsch" },
+      { code: "in", key: "navbar.langOptions.Indian" }
+    ];
+
+    this.langOptions = keys.map(item => ({
+      label: this.translate.instant(item.key),
+      command: () => this.changeLang(item.code)
+    }));
+  }
+
+  buildProfileOptions() {
+    const keys = [
+      'navbar.profileOptions.Login',
+      'navbar.profileOptions.Register'
+    ];
+
+    const icons = [
+      'pi pi-user-plus',
+      'pi pi-sign-in'
+    ];
+
+    const routerLinks = [
+      '/auth/sign-in',
+      '/auth/sign-up'
+    ];
+
+    this.profileOptions = keys.map((key, i) => ({
+      label: this.translate.instant(key),
+      icon: icons[i],
+      routerLink: routerLinks[i]
+    }));
+  }
 
   changeLang(code: string) {
     this.translate.use(code);
-  }
-
-  constructor(private router: Router) {
-    //   this.translate.setTranslation('en', translationsEN);
-    //   this.translate.setFallbackLang('en');
-  }
-  ngOnInit() {
-    this.helpOptions = [
-      { label: 'Help for a Translator', routerLink: '/help-for-translator' },
-      { label: 'How to use?', routerLink: '/how-to-use' },
-      { label: 'API for Developers', routerLink: '/developer-api' },
-      { label: 'Terms and condtions', routerLink: '/terms-and-conditions' },
-      { label: 'About Us', routerLink: '/about-us' },
-      { label: 'Advertisement', routerLink: '/advertisement' },
-      { label: 'Sitemap', routerLink: '/sitemap' },
-    ];
-    this.themeOptions = [
-      { label: 'Light', icon: 'pi pi-circle' },
-      { label: 'Dark', icon: 'pi pi-circle-fill' },
-      { label: 'System', icon: 'pi pi-desktop' },
-      { label: 'Old Theme' },
-    ];
-    this.options = [
-      { label: 'Service of translators', icon: 'pi pi-address-book' },
-      { label: 'Telegram bot', icon: 'pi pi-send', routerLink: '/telegram-bot' },
-      { label: 'Dictionary', icon: 'pi pi-book', routerLink: '/dictionary' },
-      { label: 'Context', icon: 'pi pi-comment', routerLink: '/context' },
-    ]
-    // this.langOptions = [
-    //   { label: 'English' }, { label: 'Qaraqalpaqsha' }, { label: 'Русский' }, { label: 'Uzbekcha' },
-    //   { label: 'Francais' }, { label: '中國人' }, { label: 'Espanol' },
-    //   { label: 'Italico' }, { label: 'Kirgiz' }, { label: 'Kazakh' },
-    //   { label: 'Tadjik' }, { label: 'Turkish' }, { label: 'Turkmen' },
-    //   { label: 'Portuguese' }, { label: 'Deutsch' }, { label: 'भारतीय' }
-    // ];
-    this.profileOptions = [
-      { label: 'Account', icon: 'pi pi-user' },
-      { label: 'Sign in', icon: 'pi pi-user-plus', routerLink: '/auth/sign-in' },
-      { label: 'Sign up', icon: 'pi pi-sign-out', routerLink: '/auth/sign-up' },
-    ]
   }
 }

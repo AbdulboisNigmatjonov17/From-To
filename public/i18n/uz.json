@@ -1,0 +1,54 @@
+{
+    "navbar": {
+        "AITranslation": "AI tarjimasi",
+        "CyrillToLatin": "Kirilldan lotin tiliga",
+        "PdfToText": "PDFdan matnga",
+        "help": "Yordam",
+        "helps": {
+            "HelpForTranslator": "Tarjimon uchun yordam",
+            "HowToUse": "Qanday foydalanish kerak",
+            "ApiForDeveloper": "Dasturchilar uchun API",
+            "TermsAndConditions": "Shartlar va qoidalar",
+            "AboutUs": "Biz haqimizda",
+            "Advertisement": "Reklama",
+            "Sitemap": "Sayt xaritasi"
+        },
+        "themes": {
+            "Light": "Yorug'",
+            "Dark": "Qorong'u",
+            "System": "Tizim",
+            "OldTheme": "Eski mavzu"
+        },
+        "options": {
+            "ServiceOfTranslators": "Tarjimonlar xizmati",
+            "TelegramBot": "Telegram boti",
+            "Dictionary": "Lug'at",
+            "Context": "Namuna"
+        },
+        "langOptions": {
+            "English": "English",
+            "Qaraqalpaq": "Qaraqalpaqsha",
+            "Russian": "Русский",
+            "Uzbek": "Uzbekcha",
+            "French": "Francais",
+            "Chinese": "中國人",
+            "Espanol": "Espanol",
+            "Italico": "Italico",
+            "Kirgiz": "Kirgiz",
+            "Kazakh": "Kazakh",
+            "Tadjik": "Tadjik",
+            "Turkish": "Turkish",
+            "Turkmen": "Turkmen",
+            "Portuguese": "Portuguese",
+            "Deutsch": "Deutsch",
+            "Indian": "भारतीय xaxaxa"
+        },
+        "profileOptions": {
+            "Login": "Kirish",
+            "Register": "Ro'yhattan o'tish"
+        }
+    },
+    "footer": {
+        "text": "https://from-to.io © 2025 FROM-TO MChJ tomonidan qurilgan"
+    }
+}
