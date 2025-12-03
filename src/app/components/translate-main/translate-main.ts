@@ -6,7 +6,7 @@ import { CardModule } from 'primeng/card';
 import { FileUpload } from 'primeng/fileupload';
 import { SelectModule } from 'primeng/select';
 import { TextareaModule } from 'primeng/textarea';
-import { TranslateService } from '../../services/translate.service';
+import { TranslateService } from '../../services/translate/translate.service';
 import { Languages, resultCaseType, TranslateResponse } from '../../models/Models';
 
 @Component({

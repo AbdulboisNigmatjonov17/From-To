@@ -1,0 +1,54 @@
+{
+    "navbar": {
+        "AITranslation": "Жасанды интеллект аудармасы",
+        "CyrillToLatin": "Кириллден латынға",
+        "PdfToText": "PDF-тен мәтінге",
+        "help": "Көмек",
+        "helps": {
+            "HelpForTranslator": "Аудармашыға көмек",
+            "HowToUse": "Қалай пайдалану керек",
+            "ApiForDeveloper": "Әзірлеушілерге арналған API",
+            "TermsAndConditions": "Шарттар мен ережелер",
+            "AboutUs": "Біз туралы",
+            "Advertisement": "Жарнама",
+            "Sitemap": "Сайт картасы"
+        },
+        "themes": {
+            "Light": "Light",
+            "Dark": "Dark",
+            "System": "System",
+            "OldTheme": "Eski тақырып"
+        },
+        "options": {
+            "ServiceOfTranslators": "Аудармашылар қызметі",
+            "TelegramBot": "Telegram Бот",
+            "Dictionary": "Сөздүк",
+            "Context": "контекст"
+        },
+        "langOptions": {
+            "English": "English",
+            "Qaraqalpaq": "Qaraqalpaq",
+            "Russian": "Russian",
+            "Uzbek": "Uzbek",
+            "French": "French",
+            "Chinese": "Chinese",
+            "Español": "Español",
+            "Itálian": "Itálian",
+            "Kyrgyz": "Kyrgyz",
+            "Kazakh": "Kazakh",
+            "Tadjik": "Tadjik",
+            "Turkish": "Turkish",
+            "Turkmen": "Turkmen",
+            "Portuguese": "Portuguese",
+            "Deutsch": "Deutsch",
+            "Indian": "Indian"
+        },
+        "profileOptions": {
+            "Login": "Кирүү",
+            "Register": "Тіркелу"
+        }
+    },
+    "footer": {
+        "text": "https://from-to.io © 2025 FROM-TO LLC компаниясы құрастырған"
+    }
+}

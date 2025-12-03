@@ -1,0 +1,54 @@
+{
+    "navbar": {
+        "AITranslation": " AI awdarması",
+        "CyrillToLatin": " Kirillden latın tiline",
+        "PdfToText": " PDFdan tekstke",
+        "help": " Járdem",
+        "helps": {
+            "HelpForTranslators": " Awdarmashı ushın járdem",
+            "HowToUse": " Qanday paydalanıw kerek",
+            "ApiForDeveloper": " Programmistler ushın API",
+            "TermsAndConditions": " Shártler hám qaǵıydalar",
+            "AboutUs": " Biz haqqımızda",
+            "Advertisement": " Reklama",
+            "Sitemap": " Sayt kartası"
+        },
+        "themes": {
+            "Light": " Jarıq",
+            "Dark": " Qaranǵi",
+            "System": " Sistema",
+            "OldTheme": " Eski tema"
+        },
+        "options": {
+            "ServiceOfTranslators": " Dilmashlar xızmeti",
+            "TelegramBot": " Telegram baǵı",
+            "Dictionary": " Sózlik",
+            "Context": " Úlgi"
+        },
+        "langOptions": {
+            "English": "English",
+            "Qaraqalpaq": "Qaraqalpaq",
+            "Russian": "Russian",
+            "Uzbek": "Uzbek",
+            "French": "French",
+            "Chinese": "Chinese",
+            "Español": "Español",
+            "Itálian": "Itálian",
+            "Kyrgyz": "Kyrgyz",
+            "Kazakh": "Kazakh",
+            "Tadjik": "Tadjik",
+            "Turkish": "Turkish",
+            "Turkmen": "Turkmen",
+            "Portuguese": "Portuguese",
+            "Deutsch": "Deutsch",
+            "Indian": "Indian"
+        },
+        "profileOptions": {
+            "Login": " Kirisiw",
+            "Register": " Kestetan ótiw"
+        }
+    },
+    "footer": {
+        "text": " https://from-to. ıo © 2025 FROM-TO MShJ tárepinen qurılǵan"
+    }
+}

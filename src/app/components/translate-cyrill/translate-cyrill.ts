@@ -1,5 +1,5 @@
 import { Component, Input, ViewChild } from '@angular/core';
-import { TranslateService } from '../../services/translate.service';
+import { TranslateService } from '../../services/translate/translate.service';
 import { btnType, Itransliterate, TranslateResponse } from '../../models/Models';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FileUpload } from 'primeng/fileupload';

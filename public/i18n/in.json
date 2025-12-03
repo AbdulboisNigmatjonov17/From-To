@@ -1,0 +1,54 @@
+{
+    "navbar": {
+        "AITranslation": "AI अनुवाद",
+        "CyrillToLatin": "सिरिल से लैटिन",
+        "PdfToText": "PDF से टेक्स्ट",
+        "help": "मदद",
+        "helps": {
+            "HelpForTranslator": "अनुवादक के लिए सहायता",
+            "HowToUse": "कैसे उपयोग करें",
+            "ApiForDeveloper": "डेवलपर्स के लिए API",
+            "TermsAndConditions": "नियम और शर्तें",
+            "AboutUs": "हमारे बारे में",
+            "Advertisement": "विज्ञापन",
+            "Sitemap": "साइटमैप"
+        },
+        "themes": {
+            "Light": "हल्का",
+            "Dark": "अँधेरा",
+            "System": "सिस्टम",
+            "OldTheme": "पुराना थीम"
+        },
+        "options": {
+            "ServiceOfTranslators": "अनुवादक सेवा",
+            "TelegramBot": "टेलीग्राम बोट",
+            "Dictionary": "शब्दकोश",
+            "Context": "संदर्भ"
+        },
+        "langOptions": {
+            "English": "English",
+            "Qaraqalpaq": "Qaraqalpaq",
+            "Russian": "Russian",
+            "Uzbek": "Uzbek",
+            "French": "French",
+            "Chinese": "Chinese",
+            "Español": "Español",
+            "Itálian": "Itálian",
+            "Kyrgyz": "Kyrgyz",
+            "Kazakh": "Kazakh",
+            "Tadjik": "Tadjik",
+            "Turkish": "Turkish",
+            "Turkmen": "Turkmen",
+            "Portuguese": "Portuguese",
+            "Deutsch": "Deutsch",
+            "Indian": "Indian"
+        },
+        "profileOptions": {
+            "Login": "साइन इन",
+            "Register": "साइन अप"
+        }
+    },
+    "footer": {
+        "text": "https://from-to.io © 2025 FROM-TO LLC द्वारा निर्मित"
+    }
+}

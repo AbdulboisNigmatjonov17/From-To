@@ -1,0 +1,54 @@
+{
+    "navbar": {
+        "AITranslation": "Тарҷумаи зеҳни сунъӣ",
+        "CyrillToLatin": "Аз сирилл ба лотинӣ",
+        "PdfToText": "PDF ба матн",
+        "help": "Кӯмак",
+        "helps": {
+            "HelpForTranslator": "Кӯмак барои тарҷумон",
+            "HowToUse": "Чӣ тавр истифода бурдан мумкин аст",
+            "ApiForDeveloper": "API барои таҳиягарон",
+            "TermsAndConditions": "Шартҳо ва қоидаҳо",
+            "AboutUs": "Дар бораи мо",
+            "Advertisement": "Reklama",
+            "Sitemap": "Харитаи сайт"
+        },
+        "themes": {
+            "Light": "Light",
+            "Dark": "Dark",
+            "System": "System",
+            "OldTheme": "Мавзӯи кӯҳна"
+        },
+        "options": {
+            "ServiceOfTranslators": "Хизматрасонии тарҷумонҳо",
+            "TelegramBot": "Telegram бот",
+            "Dictionary": "Луғат",
+            "Context": "Контекст"
+        },
+        "langOptions": {
+            "English": "English",
+            "Qaraqalpaq": "Qaraqalpaq",
+            "Russian": "Russian",
+            "Uzbek": "Uzbek",
+            "French": "French",
+            "Chinese": "Chinese",
+            "Español": "Español",
+            "Itálian": "Itálian",
+            "Kyrgyz": "Kyrgyz",
+            "Kazakh": "Kazakh",
+            "Tadjik": "Tadjik",
+            "Turkish": "Turkish",
+            "Turkmen": "Turkmen",
+            "Portuguese": "Portuguese",
+            "Deutsch": "Deutsch",
+            "Indian": "Indian"
+        },
+        "profileOptions": {
+            "Login": "Ворид шудан",
+            "Register": "Ба қайд гирифтан"
+        }
+    },
+    "footer": {
+        "text": "https://from-to.io © 2025 Аз ҷониби FROM-TO LLC сохта шудааст"
+    }
+}

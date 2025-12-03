@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { FileUpload } from 'primeng/fileupload';
-import { TranslateService } from '../../services/translate.service';
+import { TranslateService } from '../../services/translate/translate.service';
 import { btnType, Languages } from '../../models/Models';
 import { RouterModule } from '@angular/router';
 import { PdfToText } from '../../components/pdf-to-text/pdf-to-text';

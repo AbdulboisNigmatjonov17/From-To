@@ -2,7 +2,6 @@ import { Component, inject, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from "./components/navbar/navbar.component";
 import { TranslatePipe, TranslateService, TranslateDirective } from '@ngx-translate/core';
-// import translationsEN from "../../public/i18n/en.json";
 
 @Component({
   selector: 'app-root',

@@ -1,0 +1,54 @@
+{
+    "navbar": {
+        "AITranslation": "Traduction IA",
+        "CyrillToLatin": "Cyrill vers Latin",
+        "PdfToText": "PDF vers texte",
+        "help": "Aide",
+        "helps": {
+            "HelpForTranslator": "Aide pour le traducteur",
+            "HowToUse": "Mode d'emploi",
+            "ApiForDeveloper": "API pour les développeurs",
+            "TermsAndConditions": "Conditions générales",
+            "AboutUs": "À propos",
+            "Advertisement": "Publicité",
+            "Sitemap": "Plan du site"
+        },
+        "themes": {
+            "Light": "Clair",
+            "Dark": "Sombre",
+            "System": "Système",
+            "OldTheme": "Ancien thème"
+        },
+        "options": {
+            "ServiceOfTranslators": "Service de traduction",
+            "TelegramBot": "Bot Telegram",
+            "Dictionary": "Dictionnaire",
+            "Context": "Contexte"
+        },
+        "langOptions": {
+            "English": "Anglais",
+            "Qaraqalpaq": "Qaraqalpaq",
+            "Russian": "Russe",
+            "Uzbek": "Ouzbek",
+            "French": "Français",
+            "Chinese": "Chinois",
+            "Español": "Espagnol",
+            "Italico": "Italico",
+            "Kyrgyz": "Kirghize",
+            "Kazakh": "Kazakh",
+            "Tadjik": "Tadjik",
+            "Turkish": "Turc",
+            "Turkmen": "Turkmènes",
+            "Portuguese": "Portugais",
+            "Deutsch": "Allemand",
+            "Indien": "Indien"
+        },
+        "profileOptions": {
+            "Login": "Connexion",
+            "Register": "S'inscrire"
+        }
+    },
+    "footer": {
+        "text": "https://from-to.io © 2025 Créé par FROM-TO LLC"
+    }
+}

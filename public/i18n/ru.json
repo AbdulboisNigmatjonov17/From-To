@@ -1,0 +1,54 @@
+{
+    "navbar": {
+        "AITranslation": "AI Translation",
+        "CyrillToLatin": "Кириллица в латиницу",
+        "PdfToText": "PDF в текст",
+        "help": "Справка",
+        "helps": {
+            "HelpForTranslator": "Помощь переводчику",
+            "HowToUse": "Как использовать",
+            "ApiForDeveloper": "API для разработчиков",
+            "TermsAndConditions": "Условия использования",
+            "AboutUs": "О нас",
+            "Advertisement": "Реклама",
+            "Sitemap": "Карта сайта"
+        },
+        "themes": {
+            "Light": "Светлая",
+            "Dark": "Тёмная",
+            "System": "Системная",
+            "OldTheme": "Старая тема"
+        },
+        "options": {
+            "ServiceOfTranslators": "Служба переводчиков",
+            "TelegramBot": "Телеграм-бот",
+            "Dictionary": "Словарь",
+            "Context": "Контекст"
+        },
+        "langOptions": {
+            "English": "Английский",
+            "Qaraqalpaq": "Каракалпакша",
+            "Russian": "Русский",
+            "Uzbek": "Узбекский",
+            "French": "Французский",
+            "Chinese": "Китайский",
+            "Español": "Испаньол",
+            "Italico": "Италиконский",
+            "Kyrgyz": "Киргиз",
+            "Kazakh": "Казах",
+            "Tadjik": "Таджик",
+            "Turkish": "Турецкий",
+            "Turkmen": "Туркмен",
+            "Portuguese": "Португальский",
+            "Deutsch": "Немецкий",
+            "Indian": "Индийский"
+        },
+        "profileOptions": {
+            "Login": "Войти",
+            "Register": "Зарегистрироваться"
+        }
+    },
+    "footer": {
+        "text": "https://from-to.io © 2025 Создано FROM-TO LLC"
+    }
+}

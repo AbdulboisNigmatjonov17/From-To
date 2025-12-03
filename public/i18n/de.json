@@ -1,0 +1,54 @@
+{
+    "navbar": {
+        "AITranslation": "KI-Übersetzung",
+        "CyrillToLatin": "Kyrill zu Latein",
+        "PdfToText": "PDF zu Text",
+        "help": "Hilfe",
+        "helps": {
+            "HelpForTranslator": "Hilfe für Übersetzer",
+            "HowToUse": "Anleitung",
+            "ApiForDeveloper": "API für Entwickler",
+            "TermsAndConditions": "Allgemeine Geschäftsbedingungen",
+            "AboutUs": "Über uns",
+            "Advertisement": "Werbung",
+            "Sitemap": "Sitemap"
+        },
+        "themes": {
+            "Light": "Hell",
+            "Dark": "Dunkel",
+            "System": "System",
+            "OldTheme": "Altes Design"
+        },
+        "options": {
+            "ServiceOfTranslators": "Übersetzerdienst",
+            "TelegramBot": "Telegram-Bot",
+            "Dictionary": "Wörterbuch",
+            "Context": "Kontext"
+        },
+        "langOptions": {
+            "English": "English",
+            "Qaraqalpaq": "Qaraqalpaq",
+            "Russian": "Russian",
+            "Uzbek": "Uzbek",
+            "French": "French",
+            "Chinese": "Chinese",
+            "Español": "Español",
+            "Itálian": "Itálian",
+            "Kyrgyz": "Kyrgyz",
+            "Kazakh": "Kazakh",
+            "Tadjik": "Tadjik",
+            "Turkish": "Turkish",
+            "Turkmen": "Turkmen",
+            "Portuguese": "Portuguese",
+            "Deutsch": "Deutsch",
+            "Indian": "Indian"
+        },
+        "profileOptions": {
+            "Login": "Anmelden",
+            "Register": "Registrieren"
+        }
+    },
+    "footer": {
+        "text": "https://from-to.io © 2025 Entwickelt von FROM-TO LLC"
+    }
+}

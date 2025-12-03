@@ -1,0 +1,54 @@
+{
+    "navbar": {
+        "AITranslation": "AI 翻譯",
+        "CyrillToLatin": "西里爾字母轉拉丁字母",
+        "PdfToText": "PDF 轉文本",
+        "help": "幫助",
+        "helps": {
+            "HelpForTranslator": "譯者幫助",
+            "HowToUse": "使用方法",
+            "ApiForDeveloper": "API 開發者",
+            "TermsAndConditions": "條款與條件",
+            "AboutUs": "關於我們",
+            "Advertisement": "廣告",
+            "Sitemap": "網站地圖"
+        },
+        "themes": {
+            "Light": "淺色",
+            "Dark": "深色",
+            "System": "系統",
+            "OldTheme": "舊主題"
+        },
+        "options": {
+            "ServiceOfTranslators": "翻譯服務",
+            "TelegramBot": "Telegram 機器人",
+            "Dictionary": "字典",
+            "Context": "上下文"
+        },
+        "langOptions": {
+            "English": "English",
+            "Qaraqalpaq": "Qaraqalpaq",
+            "Russian": "Russian",
+            "Uzbek": "Uzbek",
+            "French": "French",
+            "Chinese": "Chinese",
+            "Español": "Español",
+            "Itálian": "Itálian",
+            "Kyrgyz": "Kyrgyz",
+            "Kazakh": "Kazakh",
+            "Tadjik": "Tadjik",
+            "Turkish": "Turkish",
+            "Turkmen": "Turkmen",
+            "Portuguese": "Portuguese",
+            "Deutsch": "Deutsch",
+            "Indian": "Indian"
+        },
+        "profileOptions": {
+            "Login": "登入在",
+            "Register": "註冊"
+        }
+    },
+    "footer": {
+        "text": "https://from-to.io © 2025 由 FROM-TO LLC 建構"
+    }
+}

@@ -27,13 +27,13 @@
         },
         "langOptions": {
             "English": "English",
-            "Qaraqalpaq": "Qaraqalpaqsha",
-            "Russian": "Русский",
+            "Qaraqalpaq": "Qaraqalpaq",
+            "Russian": "Russian",
             "Uzbek": "Uzbek",
-            "French": "Francais",
-            "Chinese": "中國人",
+            "French": "French",
+            "Chinese": "Chinese",
             "Español": "Español",
-            "Italico": "Italico",
+            "Itálian": "Itálian",
             "Kyrgyz": "Kyrgyz",
             "Kazakh": "Kazakh",
             "Tadjik": "Tadjik",
@@ -41,7 +41,7 @@
             "Turkmen": "Turkmen",
             "Portuguese": "Portuguese",
             "Deutsch": "Deutsch",
-            "Indian": "भारतीय"
+            "Indian": "Indian"
         },
         "profileOptions": {
             "Login": "Sign in",

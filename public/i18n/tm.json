@@ -1,0 +1,54 @@
+{
+    "navbar": {
+        "AITranslation": "AI Terjime",
+        "CyrillToLatin": "Kirillden Latynça",
+        "PdfToText": "PDF-den Tekste",
+        "help": "Kömek",
+        "helps": {
+            "HelpForTranslator": "Terjimeçi üçin kömek",
+            "HowToUse": "Nähili ulanmaly",
+            "ApiForDeveloper": "Öndürijiler üçin API",
+            "TermsAndConditions": "Şertler we düzgünler",
+            "AboutUs": "Biz barada",
+            "Advertisement": "Reklama",
+            "Sitemap": "Sitemap"
+        },
+        "themes": {
+            "Light": "Light",
+            "Dark": "Dark",
+            "System": "System",
+            "OldTheme": "Köne tema"
+        },
+        "options": {
+            "ServiceOfTranslators": "Terjimeçileriň hyzmaty",
+            "TelegramBot": "Telegram Bot ",
+            "Dictionary": "Sözlük",
+            "Context": "Kontekst"
+        },
+        "langOptions": {
+            "English": "English",
+            "Qaraqalpaq": "Qaraqalpaq",
+            "Russian": "Russian",
+            "Uzbek": "Uzbek",
+            "French": "French",
+            "Chinese": "Chinese",
+            "Español": "Español",
+            "Itálian": "Itálian",
+            "Kyrgyz": "Kyrgyz",
+            "Kazakh": "Kazakh",
+            "Tadjik": "Tadjik",
+            "Turkish": "Turkish",
+            "Turkmen": "Turkmen",
+            "Portuguese": "Portuguese",
+            "Deutsch": "Deutsch",
+            "Indian": "Indian"
+        },
+        "profileOptions": {
+            "Login": "Gir",
+            "Register": "Hasaba gir"
+        }
+    },
+    "footer": {
+        "text": "https://from-to.io © 2025 FROM-TO LLC tarapyndan guruldy"
+    }
+}

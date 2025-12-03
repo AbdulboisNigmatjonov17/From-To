@@ -1,0 +1,54 @@
+{
+    "navbar": {
+        "AITranslation": "AI Çevirisi",
+        "CyrillToLatin": "Cyrill'den Latince'ye",
+        "PdfToText": "PDF'den Metne",
+        "help": "Yardım",
+        "helps": {
+            "HelpForTranslator": "Çevirmen Yardımı",
+            "HowToUse": "Nasıl Kullanılır",
+            "ApiForDeveloper": "Geliştiriciler için API",
+            "TermsAndConditions": "Şartlar ve Koşullar",
+            "AboutUs": "Hakkımızda",
+            "Advertisement": "Reklam",
+            "Sitemap": "Site Haritası"
+        },
+        "themes": {
+            "Light": "Light",
+            "Dark": "Koyu",
+            "System": "System",
+            "OldTheme": "Eski Tema"
+        },
+        "options": {
+            "ServiceOfTranslators": "Çevirmenlerin Hizmeti",
+            "TelegramBot": "Telgraf Botu",
+            "Dictionary": "Sözlük",
+            "Context": "Bağlam"
+        },
+        "langOptions": {
+            "English": "English",
+            "Qaraqalpaq": "Qaraqalpaq",
+            "Russian": "Russian",
+            "Uzbek": "Uzbek",
+            "French": "French",
+            "Chinese": "Chinese",
+            "Español": "Español",
+            "Itálian": "Itálian",
+            "Kyrgyz": "Kyrgyz",
+            "Kazakh": "Kazakh",
+            "Tadjik": "Tadjik",
+            "Turkish": "Turkish",
+            "Turkmen": "Turkmen",
+            "Portuguese": "Portuguese",
+            "Deutsch": "Deutsch",
+            "Indian": "Indian"
+        },
+        "profileOptions": {
+            "Login": "Giriş yap",
+            "Register": "Kaydol"
+        }
+    },
+    "footer": {
+        "text": "https://from-to.io © 2025 FROM-TO LLC tarafından oluşturulmuştur"
+    }
+}
