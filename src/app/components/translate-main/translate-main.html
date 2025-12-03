@@ -76,7 +76,7 @@
         </div>
     </div>
 </p-card>
-@if (text.value?.length === 0) {
+@if (text.value?.length === 0 && selectedToLanguage === 'kaa_Latn' || selectedFromLanguage === 'kaa_Latn') {
 <form class="w-full flex gap-2 justify-end p-5">
     <input id="latin" name="alphabet" type="radio" value="latin" [(ngModel)]="resultCase.value"
         (ngModelChange)="translate()">

@@ -3,12 +3,13 @@ import { MenuService } from '../../services/menu/menu.service';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { MenuModule } from 'primeng/menu';
 import { ButtonModule } from 'primeng/button';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
-  imports: [MenuModule, ButtonModule, TranslatePipe],
+  imports: [MenuModule, ButtonModule, TranslatePipe, RouterModule],
   standalone: true
 })
 export class NavbarComponent {
@@ -36,4 +37,11 @@ export class NavbarComponent {
   changeLang(code: string) {
     this.translate.use(code);
   }
+
+  currentTheme = 'system';
+
+  setTheme(theme: 'light' | 'dark' | 'system' | 'old') {
+    this.currentTheme = theme;
+  }
+
 }

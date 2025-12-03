@@ -18,7 +18,9 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
     provideAnimationsAsync(),
-    providePrimeNG({ theme: { preset: Aura } }),
+    providePrimeNG({
+      theme: { preset: Aura }
+    }),
     provideHttpClient(withInterceptorsFromDi()),
     ...TranslateModule.forRoot({
       defaultLanguage: 'en',
