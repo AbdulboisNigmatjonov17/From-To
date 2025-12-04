@@ -1,58 +1,53 @@
-<main class="flex-1 p-2 py-6 duration-1000 animate-in fade-in md:container md:p-6">
-    <div class="rounded-lg bg-white border-[#e2e8f0] bg-card text-card-foreground shadow-sm p-4">
-        <section class="mx-auto mb-4 flex max-w-[980px] flex-col items-center gap-2 pb-0 pt-4 md:pb-8 md:pt-12">
-            <h1 class="text-center text-3xl font-bold leading-tight tracking-tighter md:text-5xl lg:leading-[1.1]">Help
-                for translator</h1>
-        </section>
-        <div class="card border border-[#e5e7eb] rounded-md">
-            <p-table [value]="customers" [paginator]="true" [rows]="9" [first]="first"
-                [tableStyle]="{ 'min-width': '50rem' }" (onPage)="pageChange($event)">
-                <ng-template #header>
-                    <tr class="text-[#64748B] text-sm text-center p-4">
-                        <th>ID</th>
-                        <th>Title</th>
-                        <th>Count sentences</th>
-                        <th>Count words</th>
-                        <th>Saurce Language</th>
-                        <th>Target Languages</th>
-                        <th>Status</th>
-                        <th>File</th>
-                        <th>Actions</th>
-                    </tr>
-                </ng-template>
-                <ng-template #body let-customer>
-                    <tr
-                        class="text-[#020817] font-semibold leading-4 text-sm text-center border-b border-[#e2e8f0]">
-                        <td>{{ customer.id }}</td>
-                        <td>{{ customer.title }}</td>
-                        <td>50</td>
-                        <td>{{ customer.countWords }}</td>
-                        <td>kaa</td>
-                        <td
-                            class="max-w-[350px] min-h-[85px] flex flex-wrap gap-2 cursor-pointer border text-xs border-[#020817] items-center">
-                            <span *ngFor="let lang of customer.targetLanguages"
-                                class="flex items-center rounded-full border border-[#e2e8f0] h-6 px-3">
-                                {{ lang }}
-                            </span>
-                        </td>
+<div class="rounded-lg border bg-card text-card-foreground shadow-sm p-4 border-[#e2e8f0]">
+    <section class="mx-auto mb-4 flex max-w-[980px] flex-col items-center gap-2 pb-0 pt-4 md:pb-8 md:pt-12">
+        <h1 class="text-center text-3xl font-bold leading-tight tracking-tighter md:text-5xl lg:leading-[1.1]">Help
+            for translator</h1>
+    </section>
+    <div class="card border border-[#e5e7eb] rounded-md">
+        <p-table [value]="customers" [paginator]="true" [rows]="9" [first]="first"
+            [tableStyle]="{ 'min-width': '50rem' }" (onPage)="pageChange($event)">
+            <ng-template #header>
+                <tr class="text-[#64748B] text-sm text-center p-4">
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Count sentences</th>
+                    <th>Count words</th>
+                    <th>Saurce Language</th>
+                    <th>Target Languages</th>
+                    <th>Status</th>
+                    <th>File</th>
+                    <th>Actions</th>
+                </tr>
+            </ng-template>
+            <ng-template #body let-customer>
+                <tr class="text-[#020817] font-semibold leading-4 text-sm text-center border-b border-[#e2e8f0]">
+                    <td>{{ customer.id }}</td>
+                    <td>{{ customer.title }}</td>
+                    <td>50</td>
+                    <td>{{ customer.countWords }}</td>
+                    <td>kaa</td>
+                    <td
+                        class="max-w-[350px] min-h-[85px] flex flex-wrap gap-2 cursor-pointer border text-xs border-[#020817] items-center">
+                        <span *ngFor="let lang of customer.targetLanguages"
+                            class="flex items-center rounded-full border border-[#e2e8f0] h-6 px-3">
+                            {{ lang }}
+                        </span>
+                    </td>
 
 
-                        <td>NEW</td>
-                        <td>
-                            <button
-                                class="cursor-pointer border-[#e2e8f0] bg-[#F0F6FF] flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:scale-105 active:scale-95 border border-input bg-background hover:bg-accent hover:text-accent-foreground shadow-sm hover:shadow-md h-10 px-4 py-2"><i
-                                    class="pi pi-file" style="margin-right: 8px;"></i>Download file</button>
-                        </td>
-                        <td>
-                            <button
-                                class="bg-[#2563EB] cursor-pointer text-[#F8FAFC] flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:scale-105 active:scale-95 bg-primary text-primary-foreground hover:bg-primary/90 shadow-md hover:shadow-lg h-10 px-4 py-2 group">View
-                                task <i class="pi pi-arrow-right"
-                                    style="margin-left: 8px; font-size: 16px;"></i></button>
-                        </td>
-                    </tr>
-                </ng-template>
-                <ng-template #paginatorcenter></ng-template>
-            </p-table>
-        </div>
+                    <td>NEW</td>
+                    <td>
+                        <button
+                            class="cursor-pointer border-[#e2e8f0] bg-[#F0F6FF] flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:scale-105 active:scale-95 border border-input bg-background hover:bg-accent hover:text-accent-foreground shadow-sm hover:shadow-md h-10 px-4 py-2"><i
+                                class="pi pi-file" style="margin-right: 8px;"></i>Download file</button>
+                    </td>
+                    <td>
+                        <button
+                            class="bg-[#2563EB] cursor-pointer text-[#F8FAFC] flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:scale-105 active:scale-95 bg-primary text-primary-foreground hover:bg-primary/90 shadow-md hover:shadow-lg h-10 px-4 py-2 group">View
+                            task <i class="pi pi-arrow-right" style="margin-left: 8px; font-size: 16px;"></i></button>
+                    </td>
+                </tr>
+            </ng-template>
+            <ng-template #paginatorcenter></ng-template>
+        </p-table>
     </div>
-</main>

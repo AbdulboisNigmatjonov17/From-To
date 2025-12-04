@@ -1,6 +1,10 @@
 <app-navbar></app-navbar>
 <div class="relative container flex flex-col mx-auto">
-    <router-outlet></router-outlet>
+    <main class="flex-1 p-2 py-6 duration-1000 animate-in fade-in md:container md:p-6">
+        <div class="rounded-lg border bg-card text-card-foreground shadow-sm bg-white border-[#e2e8f0]">
+            <router-outlet></router-outlet>
+        </div>
+    </main>
 </div>
 <footer class="text-[#64748b] py-2 text-center text-sm leading-loose text-muted-foreground">{{"footer.text" |
     translate}}</footer>

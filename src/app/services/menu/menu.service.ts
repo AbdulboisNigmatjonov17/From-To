@@ -69,7 +69,7 @@ export class MenuService {
     ];
 
     const routerLinks = [
-      '',
+      '/',
       '/telegram-bot',
       '/dictionary',
       '/context'
