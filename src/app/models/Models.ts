@@ -20,9 +20,24 @@ export interface ICustomer {
 }
 
 export interface IConditions {
-  title: string;
-  text: string;
+    title: string;
+    text: string;
 };
+
+export interface IAdvertisementData {
+    desktop: {
+        imageUrl: string;
+        title: string;
+        size: string;
+    }[];
+
+    mobile: {
+        imageUrl: string;
+        title: string;
+        size: string;
+    }[];
+}
+
 
 export type btnType = 'true' | 'false';
 export type resultCaseType = 'latin' | 'cyrill';
