@@ -8,7 +8,6 @@ import { DeveloperApi } from './pages/developer-api/developer-api';
 import { TermsAndConditions } from './pages/terms-and-conditions/terms-and-conditions';
 import { AboutUs } from './pages/about-us/about-us';
 import { Advertisement } from './pages/advertisement/advertisement';
-import { Sitemap } from './pages/sitemap/sitemap';
 import { TelegramBot } from './pages/telegram-bot/telegram-bot';
 import { Dictionary } from './pages/dictionary/dictionary';
 import { Context } from './pages/context/context';
@@ -28,7 +27,6 @@ export const routes: Routes = [
     { path: 'terms-and-conditions', component: TermsAndConditions },
     { path: 'about-us', component: AboutUs },
     { path: 'advertisement', component: Advertisement },
-    { path: 'sitemap', component: Sitemap },
     { path: 'telegram-bot', component: TelegramBot },
     { path: 'dictionary', component: Dictionary },
     { path: 'context', component: Context },

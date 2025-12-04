@@ -19,5 +19,10 @@ export interface ICustomer {
     targetLanguages: string[]
 }
 
+export interface IConditions {
+  title: string;
+  text: string;
+};
+
 export type btnType = 'true' | 'false';
 export type resultCaseType = 'latin' | 'cyrill';

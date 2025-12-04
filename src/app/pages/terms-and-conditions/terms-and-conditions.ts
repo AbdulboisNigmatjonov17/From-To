@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { conditionsData } from '../../../data/conditionData';
 
 @Component({
   selector: 'app-terms-and-conditions',
@@ -6,6 +7,7 @@ import { Component } from '@angular/core';
   templateUrl: './terms-and-conditions.html',
   styleUrl: './terms-and-conditions.css',
 })
-export class TermsAndConditions {
 
+export class TermsAndConditions {
+  data = conditionsData
 }
