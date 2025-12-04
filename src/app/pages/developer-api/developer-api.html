@@ -1,2 +1,152 @@
-
-<p>developer-api works!</p>
+<main class="flex-1 p-2 py-6 duration-1000 animate-in fade-in md:container md:p-6">
+    <div class="bg-white border-[#e2e8f0] rounded-lg border bg-card text-card-foreground shadow-sm p-2 md:p-4">
+        <section class="mx-auto mb-4 flex max-w-[980px] flex-col items-center gap-2 pb-0 pt-4 md:pb-8 md:pt-12">
+            <h1 class="text-center text-3xl font-bold leading-tight tracking-tighter md:text-5xl lg:leading-[1.1]">API
+                for Developers
+            </h1>
+        </section>
+        <section class="flex">
+            <nav class="border-[#e2e8f0] hidden w-64 overflow-auto border-r p-6 md:block">
+                <div class="space-y-4">
+                    <a [routerLink]="[]" fragment="introduction"
+                        class="block text-sm font-medium hover:text-primary">Introduction</a>
+                    <div class="space-y-2">
+                        <p class="text-xs font-medium uppercase text-[#64748B]">Endpoints</p>
+                        <a [routerLink]="[]" fragment="translator"
+                            class="block text-sm font-medium hover:text-primary">Translator</a>
+                        <a [routerLink]="[]" fragment="transliterate"
+                            class="block text-sm font-medium hover:text-primary">Latin-Kril Transliterate</a>
+                        <a [routerLink]="[]" fragment="languages"
+                            class="block text-sm font-medium hover:text-primary">Get Languages List</a>
+                    </div>
+                </div>
+            </nav>
+            <main class="flex-1 overflow-auto p-2 md:p-8">
+                <section id="introduction" class="space-y-4">
+                    <h1 class="text-3xl font-bold">Introduction</h1>
+                    <p>Welcome to the From-To.io API documentation. This API provides access to various resources
+                        related to our translator platform.
+                    </p>
+                    <p>The API uses JSON for all requests and responses, and follows RESTful principles. All endpoints
+                        are accessible via HTTPS only.
+                    </p>
+                </section>
+                <section id="translator" class="mt-12 space-y-6">
+                    <h1 class="text-3xl font-bold">Translate</h1>
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-bold">Translate entered text</h3>
+                        <p>This endpoint returns translation from one language to another</p>
+                    </div>
+                    <div class="mt-4">
+                        <h4 class="text-lg font-bold">Request</h4>
+                        <div class="rounded-md bg-[#F1F5F9] p-4">
+                            <pre class="overflow-scroll"><code>POST https://api.from-to.uz/api/v1/translate</code></pre>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <h4 class="text-lg font-bold">Body</h4>
+                        <div class="rounded-md bg-[#F1F5F9] p-4">
+                            <pre class="overflow-scroll">
+<code>{{'{'}}
+  "body": {{'{'}}
+    "lang_from": "uz",
+    "lang_to": "kaa",
+    "resultCase": "cyrill",
+    "text": "Salom"
+  {{'}'}}
+{{'}'}}</code>
+                            </pre>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <h4 class="text-lg font-bold">Response</h4>
+                        <div class="rounded-md bg-[#F1F5F9] p-4">
+                            <pre class="overflow-scroll"><code>{{'{'}}
+  "result": "Сəлем"
+{{'}'}}
+</code></pre>
+                        </div>
+                    </div>
+                </section>
+                <section id="transliterate" class="mt-12 space-y-6">
+                    <h1 class="text-3xl font-bold">Latin-Kirill Transliterate</h1>
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-bold">Transliterate entered text</h3>
+                        <p>This endpoint is used to convert Latin letters to Cyrillic and vice versa.</p>
+                    </div>
+                    <div class="mt-4">
+                        <h4 class="text-lg font-bold">Request</h4>
+                        <div class="rounded-md bg-[#F1F5F9] p-4">
+                            <pre
+                                class="overflow-scroll"><code>POST https://api.from-to.uz/api/v1/transliterate</code></pre>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <h4 class="text-lg font-bold">Body</h4>
+                        <div class="rounded-md bg-[#F1F5F9] p-4">
+                            <pre class="overflow-scroll">
+<code>{{'{'}}
+  "body": {{'{'}}
+    "lang_from": "uz_latin",
+    "lang_to": "uz_cyrillic",
+    "text": "Salom"
+  {{'}'}}
+{{'}'}}</code>
+                            </pre>
+                        </div>
+                        <p>Available language codes for transliterate: uz_latin, uz_cyrillic, kaa_latin, kaa_cyrillic
+                        </p>
+                    </div>
+                    <div class="mt-4">
+                        <h4 class="text-lg font-bold">Response</h4>
+                        <div class="rounded-md bg-[#F1F5F9] p-4">
+                            <pre class="overflow-scroll"><code>{{'{'}}
+  "result": "салом"
+{{'}'}}
+</code></pre>
+                        </div>
+                    </div>
+                </section>
+                <section id="languages" class="mt-12 space-y-6">
+                    <h1 class="text-3xl font-bold">Translation Languages List</h1>
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-bold">Translation Languages List</h3>
+                        <p>This endpoint returned all available languages lists.</p>
+                    </div>
+                    <div class="mt-4">
+                        <h4 class="text-lg font-bold">Request</h4>
+                        <div class="rounded-md bg-[#F1F5F9] p-4">
+                            <pre class="overflow-scroll"><code>POST https://cdn.from-to.uz/languages.json</code></pre>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <h4 class="text-lg font-bold">Response</h4>
+                        <div class="rounded-md bg-[#F1F5F9] p-4">
+                            <pre class="overflow-scroll">
+<code>[
+    {{'{'}}
+        "name": "English",
+        "code": "eng_Latn"
+    {{'}'}},
+    {{'{'}}
+        "name": "Russian",
+        "code": "rus_Cyrl"
+    {{'}'}},
+    {{'{'}}
+        "name": "Uzbek",
+        "code": "uzn_Latn"
+    {{'}'}},
+    {{'{'}}
+        "name": "Karakalpak",
+        "code": "kaa"
+    {{'}'}},
+    ...
+]</code>
+                            </pre>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </section>
+    </div>
+</main>

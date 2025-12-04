@@ -1,4 +1,4 @@
-import { Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { Home } from './pages/home/home';
 import { Transliterate } from './pages/transliterate/transliterate';
 import { PdfImageToText } from './pages/pdf-image-to-text/pdf-image-to-text';
@@ -16,6 +16,7 @@ import { SignIn } from './pages/auth/sign-in/sign-in';
 import { SignUp } from './pages/auth/sign-up/sign-up';
 import { PdfToText } from './components/pdf-to-text/pdf-to-text';
 import { TranslateCyrill } from './components/translate-cyrill/translate-cyrill';
+import { NgModule } from '@angular/core';
 
 export const routes: Routes = [
     { path: '', component: Home },
@@ -37,3 +38,14 @@ export const routes: Routes = [
     { path: 'transliterate/:from/:to', component: TranslateCyrill },
     { path: '**', redirectTo: '' }
 ];
+@NgModule({
+    imports: [
+        RouterModule.forRoot(routes, {
+            anchorScrolling: 'enabled',
+            scrollOffset: [0, 80],
+            onSameUrlNavigation: 'reload'
+        })
+    ],
+    exports: [RouterModule]
+})
+export class AppRoutingModule { }
