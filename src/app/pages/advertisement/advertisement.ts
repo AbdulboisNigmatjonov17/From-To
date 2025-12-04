@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AdvertisementData } from '../../../data/advertisementData';
+import { IAdvertisementData } from '../../models/Models';
 
 @Component({
   selector: 'app-advertisement',
@@ -7,5 +9,5 @@ import { Component } from '@angular/core';
   styleUrl: './advertisement.css',
 })
 export class Advertisement {
-
+  data: IAdvertisementData = AdvertisementData
 }

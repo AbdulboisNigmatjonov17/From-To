@@ -23,7 +23,7 @@ export const AdvertisementData: IAdvertisementData = {
             size: '300x600'
         },
         {
-            imageUrl: '/advertisement/desktop/bilboard.jpg',
+            imageUrl: '/advertisement/desktop/billboard.jpg',
             title: 'Bilboard',
             size: '970x250'
         },
@@ -95,17 +95,17 @@ export const AdvertisementData: IAdvertisementData = {
             size: '320x320'
         },
         {
-            imageUrl: '/advertisement/mobile/mobileLargeMobileBanner.jpg',
+            imageUrl: '/advertisement/mobile/largeMobileBanner.jpg',
             title: 'Large Mobile Banner',
             size: '320x100'
         },
         {
-            imageUrl: '/advertisement/mobile/Square.jpg',
+            imageUrl: '/advertisement/mobile/square.jpg',
             title: 'Square',
             size: '250x250'
         },
         {
-            imageUrl: '/advertisement/mobile/SmallSquare.jpg',
+            imageUrl: '/advertisement/mobile/smallSquare.jpg',
             title: 'Small Square',
             size: '200x200'
         },
