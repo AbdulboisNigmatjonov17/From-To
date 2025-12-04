@@ -12,5 +12,12 @@ export interface Itransliterate {
     toCode: string
 }
 
+export interface ICustomer {
+    id: number
+    title: string
+    countWords: number
+    targetLanguages: string[]
+}
+
 export type btnType = 'true' | 'false';
 export type resultCaseType = 'latin' | 'cyrill';
