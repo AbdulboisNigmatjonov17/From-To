@@ -28,9 +28,10 @@ body {
 
 /* DARK MODE */
 .dark {
-    --bg-color: #303541;
+    /* --bg-color: #303541; */
+    --bg-color: #0f131a;
     --bg-image: none;
-    --text-color: #F8FAFC;
+    /* --text-color: #F8FAFC; */
 }
 
 /* LIGHT MODE */
@@ -61,4 +62,12 @@ body {
 /* Border color based on theme */
 .border-theme {
     border-color: #e2e8f0;
+}
+
+.font-sans {
+    font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.__variable_f367f3 {
+    --font-sans: "__Inter_f367f3", "__Inter_Fallback_f367f3";
 }

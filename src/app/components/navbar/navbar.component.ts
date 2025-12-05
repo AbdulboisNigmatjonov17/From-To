@@ -6,12 +6,13 @@ import { ButtonModule } from 'primeng/button';
 import { RouterModule } from '@angular/router';
 import { ThemeService } from '../../services/theme/theme.service';
 import { FormsModule } from '@angular/forms';
+import { DrawerModule } from 'primeng/drawer';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
-  imports: [MenuModule, ButtonModule, TranslatePipe, RouterModule, FormsModule],
+  imports: [MenuModule, ButtonModule, TranslatePipe, RouterModule, FormsModule, DrawerModule],
   standalone: true
 })
 export class NavbarComponent {
@@ -20,7 +21,8 @@ export class NavbarComponent {
   options: { label: string; icon: string; routerLink?: string }[] = [];
   langOptions: { label: string; command: () => void }[] = [];
   profileOptions: { label: string; icon: string; routerLink: string }[] = [];
-  selectedTheme = 'system';
+  selectedTheme: string = 'system';
+  visible: boolean = false;
 
   constructor(private menuService: MenuService, private translate: TranslateService, private themeService: ThemeService) {
     this.translate.onLangChange.subscribe(() => {
