@@ -9,5 +9,5 @@ import { YouTubePlayerModule } from '@angular/youtube-player';
   styleUrl: './how-to-use.css',
 })
 export class HowToUse {
-
+  videoId = 'KuO39GPzuwg';
 }

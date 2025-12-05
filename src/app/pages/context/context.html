@@ -2,10 +2,10 @@
     <h1 class="text-center text-3xl font-bold leading-tight tracking-tighter md:text-5xl lg:leading-[1.1]">Context
     </h1>
 </section>
-<section class="py-4">
-    <div class="flex flex-row items-center justify-center gap-2 p-2 md:gap-6">
+<section class="py-4 px-4 md:px-0">
+    <div class="flex flex-col md:flex-row items-center justify-center gap-2 p-2 md:gap-6">
         <p-select [options]="fromLanguages" [(ngModel)]="selectedFromLanguage" optionLabel="name" optionValue="code"
-            [filter]="true" filterBy="name" [showClear]="true" placeholder="Select a Lang" class="w-full md:w-56">
+            [filter]="true" filterBy="name" [showClear]="true" placeholder="Select a Lang" class="w-[250px] md:w-[280px]">
         </p-select>
 
         <button (click)="swapLangs()" class="cursor-pointer">
@@ -13,19 +13,19 @@
         </button>
 
         <p-select [options]="toLanguages" [(ngModel)]="selectedToLanguage" optionLabel="name" optionValue="code"
-            [filter]="true" filterBy="name" [showClear]="true" placeholder="Select a Lang" class="w-full md:w-56">
+            [filter]="true" filterBy="name" [showClear]="true" placeholder="Select a Lang" class="w-[250px] md:w-[280px]">
         </p-select>
     </div>
     <div class="mx-auto max-w-[500px] py-2">
         <div class="flex w-full gap-2">
-            <div class="w-full flex gap-2">
+            <div class="w-full flex flex-col items-center md:items-start md:flex-row gap-2">
                 <div class="w-full space-y-2 text-[#64748B]">
                     <input type="text" placeholder="Enter a word..." [(ngModel)]="text.value"
                         class="flex border-theme h-10 w-full rounded-md border px-3 py-2 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50">
                     <p>Enter the word and press Submit.</p>
                 </div>
                 <button (click)="clear()"
-                    class="bg-[#2563EB] text-white cursor-pointer gap-2 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:scale-105 active:scale-95 bg-primary text-primary-foreground hover:bg-primary/90 shadow-md hover:shadow-lg h-10 px-4 py-2"><i
+                    class="bg-[#2563EB] w-[100px] text-white cursor-pointer gap-2 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:scale-105 active:scale-95 bg-primary text-primary-foreground hover:bg-primary/90 shadow-md hover:shadow-lg h-10 px-4 py-2"><i
                         class="pi pi-search"></i> Submit</button>
             </div>
         </div>

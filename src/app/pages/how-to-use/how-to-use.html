@@ -3,9 +3,8 @@
         to use?
     </h1>
 </section>
-<section class="flex items-center justify-center">
-    <div class="w-full max-w-3xl pb-12 pt-6">
-        <youtube-player videoId="KuO39GPzuwg" [height]="470" [width]="770"
-            [playerVars]="{ controls: 1 }"></youtube-player>
+<section class="w-full flex items-center justify-center">
+    <div class="w-full md:max-w-3xl pb-12 pt-6">
+        <youtube-player [playerVars]="{controls: 1}" [videoId]="videoId"></youtube-player>
     </div>
 </section>
