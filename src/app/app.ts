@@ -2,6 +2,7 @@ import { Component, inject, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from "./components/navbar/navbar.component";
 import { TranslatePipe, TranslateService, TranslateDirective } from '@ngx-translate/core';
+import { ThemeService } from './services/theme/theme.service';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,11 @@ export class App {
   protected readonly title = signal('From-To');
   private translate = inject(TranslateService);
 
-  constructor() {
-    this.translate.use('en'); // default language
+  constructor(private themeService: ThemeService) {
+    this.translate.use('en');
   }
+  ngOnInit() {
+    this.themeService.loadTheme();
+  }
+
 }

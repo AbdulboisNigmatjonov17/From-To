@@ -14,10 +14,10 @@
             "Sitemap": "Sitemap"
         },
         "themes": {
-            "Light": "Light",
-            "Dark": "Dark",
-            "System": "System",
-            "OldTheme": "Old Theme"
+            "light": "Light",
+            "dark": "Dark",
+            "system": "System",
+            "old-theme": "Old Theme"
         },
         "options": {
             "ServiceOfTranslators": "Service of Translators",

@@ -1,14 +1,83 @@
-/* You can add global styles to this file, and also import other style files */
-
+/* GLOBAL IMPORTS */
 @import "tailwindcss";
 @import "primeicons/primeicons.css";
 
-/* body { background-color: #e2e8f0; } */
+/* BASE BODY STYLE */
 body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Roboto", "Helvetica Neue", sans-serif;
-    color-scheme: system;
-    background-color: #e2e8f0;
+
+    background-color: var(--bg-color);
+    background-image: var(--bg-image);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    color: var(--text-color);
+}
+
+/* DEFAULT (System) */
+:root {
+    --bg-color: #e2e8f0;
+    --bg-image: none;
+    --text-color: #111111;
+    --primary-color: #e2e8f0;
+}
+
+/* DARK MODE */
+.dark {
+    --bg-color: #121212;
+    --bg-image: none;
+    --text-color: #e5e5e5;
+    --primary-color: #4aa8ff;
+}
+
+/* LIGHT MODE */
+.light {
+    --bg-color: #ffffff;
+    --bg-image: none;
+    --text-color: #333333;
+    --primary-color: #db2777;
+}
+
+/* OLD THEME — background IMAGE */
+.old-theme {
+    --bg-color: #f3efe2; /* fallback background */
+    --bg-image: url('/assets/images/old-theme.jpg');
+    --text-color: #064e3b;
+    --primary-color: #10b981;
+}
+
+/* UNIVERSAL UTILITY CLASSES */
+
+/* Background based on theme */
+.bg-theme {
+    background-color: var(--bg-color);
+}
+
+/* Text color based on theme */
+.text-theme {
+    color: var(--text-color);
+}
+
+/* Border color based on theme */
+.border-theme {
+    border-color: var(--primary-color);
+}
+
+/* Forced primary color backgrounds */
+.bg-primary-theme {
+    background-color: var(--primary-color);
+}
+
+/* Forced text primary */
+.text-primary-theme {
+    color: var(--primary-color);
+}
+
+/* Forced border primary */
+.border-primary-theme {
+    border-color: var(--primary-color);
 }

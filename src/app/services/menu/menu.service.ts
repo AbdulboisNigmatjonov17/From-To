@@ -32,26 +32,31 @@ export class MenuService {
     }));
   }
 
-  getThemeOptions() {
-    const keys = [
-      'navbar.themes.Light',
-      'navbar.themes.Dark',
-      'navbar.themes.System',
-      'navbar.themes.OldTheme'
-    ];
+getThemeOptions() {
+  return [
+    {
+      label: this.translate.instant('navbar.themes.light'),
+      icon: 'pi pi-sun',
+      theme: 'light'
+    },
+    {
+      label: this.translate.instant('navbar.themes.dark'),
+      icon: 'pi pi-moon',
+      theme: 'dark'
+    },
+    {
+      label: this.translate.instant('navbar.themes.system'),
+      icon: 'pi pi-desktop',
+      theme: 'system'
+    },
+    {
+      label: this.translate.instant('navbar.themes.old-theme'),
+      icon: 'pi pi-palette',
+      theme: 'old-theme'
+    }
+  ];
+}
 
-    const icons = [
-      'pi pi-circle',
-      'pi pi-circle-fill',
-      'pi pi-desktop',
-      ''
-    ];
-
-    return keys.map((key, i) => ({
-      label: this.translate.instant(key),
-      icon: icons[i]
-    }));
-  }
 
   getOptions() {
     const keys = [

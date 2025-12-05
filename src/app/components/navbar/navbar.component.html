@@ -16,11 +16,20 @@
                 translate}}<i class="pi pi-chevron-down" style="margin-left: 8px; width: 8px; height: 4px"></i></button>
         </div>
         <div class="w-[170px] h-full flex items-center">
-            <p-menu #menu2 [model]="themeOptions" [popup]="true" class="cursor-pointer" />
-            <button (click)="menu2.toggle($event); setTheme('dark')"
-                class="cursor-pointer flex items-center justify-center rounded-md text-sm font-medium transition-all duration-200 hover:scale-105 hover:shadow-md active:scale-95 border border-[#e2e8f0] h-10 w-10">
+            <!-- <p-menu #menu2 [model]="themeOptions" [(ngModel)]="selectedTheme" (onChange)="changeTheme($event)"
+                [popup]="true" class="cursor-pointer" />
+            <button (click)="menu2.toggle($event);" class="cursor-pointer flex items-center justify-center rounded-md text-sm font-medium transition-all
+                duration-200 hover:scale-105 hover:shadow-md active:scale-95 border h-10 w-10">
+                <i class="pi pi-sun"></i>
+            </button> -->
+            <p-menu #menu2 [model]="themeOptions" [popup]="true"></p-menu>
+
+            <button (click)="menu2.toggle($event)" class="cursor-pointer flex items-center justify-center rounded-md 
+         text-sm font-medium transition-all duration-200 hover:scale-105
+         hover:shadow-md active:scale-95 border h-10 w-10 border-theme">
                 <i class="pi pi-sun"></i>
             </button>
+
 
             <p-menu #menu3 [model]="options" [popup]="true" class="cursor-pointer" />
             <button (click)="menu3.toggle($event)"
