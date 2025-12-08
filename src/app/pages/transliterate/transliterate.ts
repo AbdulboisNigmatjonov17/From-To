@@ -14,5 +14,10 @@ import { RouterLink } from "@angular/router";
 })
 export class Transliterate {
   languages: Itransliterate[] = transliterateData;
-  alone: btnType = 'true'
+  alone: btnType = 'true';
+
+  getTargetName(toCode: string) {
+    const found = this.languages.find(l => l.fromCode === toCode);
+    return found ? found.from : 'Unknown';
+  }
 }

@@ -1,5 +1,5 @@
 <nav
-    class="w-full border-b h-14 flex items-center justify-center border-[#e2e8f033] not-dark:bg-[#f6faff] bg-[#0f172a]">
+    class="w-full border-b h-14 flex items-center justify-center border-[#e2e8f033] bg-[var(--card)]  text-[var(--text)]">
     <div class="w-full h-10 flex justify-between container">
         <div class="pl-4 md:pl-0 md:min-w-[600px] flex gap-6 items-center text-[#64748B] font-medium">
             <a routerLink="/" class="flex items-center gap-2 text-lg font-semibold md:text-base text-black">
@@ -29,8 +29,7 @@
                 <i class="pi pi-sun"></i>
             </button>
 
-
-            <p-menu #menu3 [model]="options" [popup]="true" class="cursor-pointer" />
+            <p-menu #menu3 [model]="options" [popup]="true" />
             <button (click)="menu3.toggle($event)"
                 class="cursor-pointer hidden md:flex items-center justify-center font-medium transition-colors text-black/60 hover:text-black/80 h-10 w-10">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -123,12 +122,16 @@
                     [style]="{color: '#02081799', background: '#f0f6ff', border: 'none'}" />
             </div>
 
+            <!-- <p-menu #menu4 [model]="langOptions" [popup]="true" ></p-menu>
+            <button (click)="menu4.toggle($event)" class="cursor-pointer w-10 h-10 flex items-center justify-center">
+                <i class="pi pi-language" style="font-size: 24px;"></i>
+            </button> -->
             <p-menu #menu4 [model]="langOptions" [popup]="true"></p-menu>
             <button (click)="menu4.toggle($event)" class="cursor-pointer w-10 h-10 flex items-center justify-center">
                 <i class="pi pi-language" style="font-size: 24px;"></i>
             </button>
 
-            <p-menu #menu5 [model]="profileOptions" [popup]="true" class="cursor-pointer" />
+            <p-menu #menu5 [model]="profileOptions" [popup]="true" />
             <button (click)="menu5.toggle($event)"
                 class="w-10 h-10 bg-[#2A74C5] cursor-pointer hidden md:flex items-center justify-center rounded-full bg-muted text-sm font-medium">
                 <i class="pi pi-user" style="color: white;"></i>

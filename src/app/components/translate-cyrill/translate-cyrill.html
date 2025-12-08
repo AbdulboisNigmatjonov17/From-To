@@ -1,18 +1,17 @@
 @if (alone === 'true') {
 <p-card class="h-full rounded-lg border border-theme bg-card text-card-foreground shadow-sm">
     <div class="w-full flex flex-row items-center justify-center gap-2 border-b border-theme p-2 md:gap-6">
-        <p-select [options]="fromLanguages" [(ngModel)]="selectedFromLanguage" (ngModelChange)="translate()"
-            optionLabel="from" optionValue="fromCode" [filter]="true" filterBy="from" [showClear]="true"
-            placeholder="Select a Lang" class="md:min-w-[280px]">
+        <p-select [options]="languages" optionLabel="from" optionValue="fromCode" [(ngModel)]="selectedFromLanguage"
+            (ngModelChange)="updateToLanguage($event)" [filter]="true" placeholder="Select a Lang"
+            class="md:min-w-[280px] w-[150px]">
         </p-select>
 
         <button (click)="swapLangs()" class="cursor-pointer">
             <i class="pi pi-arrow-right-arrow-left"></i>
         </button>
 
-        <p-select [options]="toLanguages" [(ngModel)]="selectedToLanguage" (ngModelChange)="translate()"
-            optionLabel="to" optionValue="toCode" [filter]="true" filterBy="to" [showClear]="true"
-            placeholder="Select a Lang" class="md:min-w-[280px]">
+        <p-select [options]="languages" optionLabel="from" optionValue="fromCode" [(ngModel)]="selectedToLanguage"
+            disabled="true" class="md:min-w-[280px] w-[150px]">
         </p-select>
     </div>
     <div class="flex w-full flex-col md:flex-row min-h-[600px] md:min-h-[400px] gap-2 md:gap-0">
@@ -70,18 +69,17 @@
     <div class="bg-white rounded-2xl">
         <p-card class="min-w-6xl h-full rounded-lg border border-theme bg-card text-card-foreground shadow-sm">
             <div class="flex flex-row items-center justify-center gap-2 border-b border-theme p-2 md:gap-6">
-                <p-select [options]="fromLanguages" [(ngModel)]="selectedFromLanguage" (ngModelChange)="translate()"
-                    optionLabel="from" optionValue="fromCode" [filter]="true" filterBy="from" [showClear]="true"
-                    placeholder="Select a Lang" class="w-full md:w-56">
+                <p-select [options]="languages" optionLabel="from" optionValue="fromCode"
+                    [(ngModel)]="selectedFromLanguage" (ngModelChange)="updateToLanguage($event)" [filter]="true"
+                    placeholder="Select a Lang" class="md:min-w-[280px] w-[150px]">
                 </p-select>
 
                 <button (click)="swapLangs()" class="cursor-pointer">
                     <i class="pi pi-arrow-right-arrow-left"></i>
                 </button>
 
-                <p-select [options]="toLanguages" [(ngModel)]="selectedToLanguage" (ngModelChange)="translate()"
-                    optionLabel="to" optionValue="toCode" [filter]="true" filterBy="to" [showClear]="true"
-                    placeholder="Select a Lang" class="w-full md:w-56">
+                <p-select [options]="languages" optionLabel="from" optionValue="fromCode"
+                    [(ngModel)]="selectedToLanguage" disabled="true" class="md:min-w-[280px] w-[150px]">
                 </p-select>
             </div>
             <div class="flex w-full flex-col md:flex-row min-h-[600px] md:min-h-[400px] gap-2 md:gap-0">

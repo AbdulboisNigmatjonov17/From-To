@@ -20,55 +20,63 @@ import { ActivatedRoute } from '@angular/router';
 export class TranslateCyrill {
   @Input() alone: btnType = 'false';
   languages: Itransliterate[] = transliterateData;
+
   text = new FormControl<string>('');
   resultText = new FormControl<string>('');
-  fromLanguages: Itransliterate[] | undefined;
-  toLanguages: Itransliterate[] | undefined;
 
   selectedFromLanguage: string = '';
   selectedToLanguage: string = '';
 
-  langName: string = '';
-
   @ViewChild('fileUpload') fileUpload!: FileUpload;
+
+  constructor(
+    private translateService: TranslateService,
+    private route: ActivatedRoute
+  ) {
+    this.route.paramMap.subscribe(params => {
+      const fromParam = params.get('from') || 'uz_latin';
+      this.selectedFromLanguage = fromParam;
+      this.updateToLanguage(fromParam);
+    });
+  }
+
   openFileChooser() {
     this.fileUpload.choose();
   }
-  constructor(private translateService: TranslateService, private route: ActivatedRoute) {
-    this.fromLanguages = this.languages;
-    this.toLanguages = this.languages;
 
-    this.route.paramMap.subscribe(params => {
-      this.selectedFromLanguage = params.get('from') || 'uz_latin';
-      this.selectedToLanguage = params.get('to') || 'uz_cyrillic';
-    });
-    // console.log(this.selectedFromLanguage, this.selectedToLanguage);
+  updateToLanguage(fromCode: string) {
+    const found = this.languages.find(l => l.fromCode === fromCode);
+    if (found) {
+      this.selectedToLanguage = found.toCode;
+    }
+    this.translate();
   }
 
   translate() {
-    this.translateService
-      .transliterateText(
-        this.text.value,
-        this.selectedFromLanguage,
-        this.selectedToLanguage
-      )
-      .subscribe({
-        next: (res: TranslateResponse) => {
-          this.resultText.setValue(res.result);
-          // console.log(res.result);
-        },
-        error: (err) => {
-          console.error("Error from server: ", err);
-        }
-      });
+    if (!this.text.value) {
+      this.resultText.setValue('');
+      return;
+    }
+
+    this.translateService.transliterateText(
+      this.text.value,
+      this.selectedFromLanguage,
+      this.selectedToLanguage
+    ).subscribe({
+      next: (res: TranslateResponse) => {
+        this.resultText.setValue(res.result);
+      }
+    });
   }
+
   swapLangs() {
     const temp = this.selectedFromLanguage;
     this.selectedFromLanguage = this.selectedToLanguage;
-    this.selectedToLanguage = temp;
-    const temp2 = this.text.value;
+    this.updateToLanguage(this.selectedFromLanguage);
+
+    const tempText = this.text.value;
     this.text.setValue(this.resultText.value);
-    this.resultText.setValue(temp2);
+    this.resultText.setValue(tempText);
 
     this.translate();
   }

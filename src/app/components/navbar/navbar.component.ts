@@ -33,16 +33,10 @@ export class NavbarComponent {
 
   buildMenus() {
     this.helpOptions = this.menuService.getHelpOptions();
-    // this.themeOptions = this.menuService.getThemeOptions();
     this.options = this.menuService.getOptions();
     this.profileOptions = this.menuService.getProfileOptions();
     this.langOptions = this.menuService.getLangOptions(this.changeLang.bind(this));
 
-    // this.themeOptions = this.menuService.getThemeOptions().map(item => ({
-    //   label: item.label,
-    //   icon: item.icon,
-    //   command: () => this.changeTheme(item.theme)
-    // }));
     this.themeOptions = this.menuService.getThemeOptions().map(opt => ({
       label: opt.label,
       icon: opt.icon,
@@ -54,20 +48,7 @@ export class NavbarComponent {
     this.translate.use(code);
   }
 
-
-  // ngOnInit() {
-  //   this.helpOptions = this.menuService.getHelpOptions();
-  //   this.options = this.menuService.getOptions();
-  //   this.profileOptions = this.menuService.getProfileOptions();
-  //   this.langOptions = this.menuService.getLangOptions(this.changeLang.bind(this));
-
-
-  // }
-
-
   changeTheme(theme: string) {
-    this.selectedTheme = theme;
     this.themeService.setTheme(theme);
   }
-
 }

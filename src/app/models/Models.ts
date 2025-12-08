@@ -8,7 +8,6 @@ export interface TranslateResponse {
 export interface Itransliterate {
     from: string
     fromCode: string
-    to: string
     toCode: string
 }
 

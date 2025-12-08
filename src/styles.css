@@ -8,61 +8,50 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: "Roboto", "Helvetica Neue", sans-serif;
-
-    background-color: var(--bg-color);
-    background-image: var(--bg-image);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-
-    color: var(--text-color);
     min-height: 100vh;
 }
 
-/* DEFAULT (System) */
-:root {
-    --bg-color: #f0f6ff;
-    --bg-image: none;
-    --text-color: #111111;
-}
-
-/* DARK MODE */
-.dark {
-    /* --bg-color: #303541; */
-    --bg-color: #0f131a;
-    --bg-image: none;
-    /* --text-color: #F8FAFC; */
-}
-
-/* LIGHT MODE */
-.light {
-    --bg-color: #ffffff;
-    --bg-image: none;
-    --text-color: #333333;
-}
-
-/* OLD THEME — background IMAGE */
-.old-theme {
-    --bg-image: url('/old-theme.jpg');
-    --text-color: #333333;
-}
-
-/* UNIVERSAL UTILITY CLASSES */
-
-/* Background based on theme */
-.bg-theme {
-    background-color: var(--bg-color);
-}
-
-/* Text color based on theme */
-.text-dark {
-    color: #f8fafc99;
-}
-
-/* Border color based on theme */
 .border-theme {
     border-color: #e2e8f0;
 }
+
+[data-theme="light"] {
+    --bg: #f0f6ff;
+    --text: #1f2937;
+    --card: #f0f6ff;
+    --border: #e5e7eb;
+    --primary: #2563eb;
+}
+
+[data-theme="dark"] {
+    --bg: #0f131a;
+    --text: #f8fafc99;
+    --card: #1e293b;
+    --border: #334155;
+    --primary: #38bdf8;
+}
+
+[data-theme="system"] {
+    --bg: #f0f6ff;
+    --text: #0f172a;
+    --card: #dbeafe;
+    --border: #93c5fd;
+    --primary: #1d4ed8;
+}
+
+[data-theme="old-theme"] {
+    --bg: transparent;
+    --text: #111827;
+    --card: rgba(255, 255, 255, 0.8);
+    --border: rgba(0, 0, 0, 0.2);
+    --primary: #2563eb;
+
+    background-image: url('/old-theme.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
 
 .font-sans {
     font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
