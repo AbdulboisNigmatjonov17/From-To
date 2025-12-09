@@ -16,9 +16,9 @@ body {
 }
 
 [data-theme="light"] {
-    --bg: #f0f6ff;
+    --bg: #fff;
     --text: #1f2937;
-    --card: #f0f6ff;
+    --card: #fff;
     --border: #e5e7eb;
     --primary: #2563eb;
 }
@@ -32,9 +32,9 @@ body {
 }
 
 [data-theme="system"] {
-    --bg: #f0f6ff;
+    --bg: #fff;
     --text: #0f172a;
-    --card: #dbeafe;
+    --card: #f0f6ff;
     --border: #93c5fd;
     --primary: #1d4ed8;
 }
