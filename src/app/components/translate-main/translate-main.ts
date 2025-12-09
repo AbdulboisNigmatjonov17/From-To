@@ -23,8 +23,8 @@ export class TranslateMain {
   fromLanguages: Languages[] | undefined;
   toLanguages: Languages[] | undefined;
 
-  selectedFromLanguage: string = 'uzn_Latn';
-  selectedToLanguage: string = 'eng_Latn';
+  selectedFromLanguage: string = 'eng_Latn';
+  selectedToLanguage: string = 'rus_Cyrl';
 
   @ViewChild('fileUpload') fileUpload!: FileUpload;
   openFileChooser() {
