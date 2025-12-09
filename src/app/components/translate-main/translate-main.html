@@ -1,7 +1,7 @@
-<p-card [style]="{'background-color': 'var(--card)'}">
+<p-card [style]="{'background-color': 'var(--card)', 'color': 'var(--primary)'}">
     <div class="flex flex-col items-center gap-2 p-2 md:flex-row md:gap-4">
         <button
-            class="cursor-pointer px-4 py-2 inline-flex items-center justify-left rounded-md text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:scale-105 active:scale-95 border border-theme hover:bg-accent hover:text-accent-foreground shadow-sm hover:shadow-md md:w-auto ">
+            class="cursor-pointer px-4 py-2 inline-flex items-center justify-left rounded-md text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:scale-105 active:scale-95 border border-(--border) hover:bg-accent hover:text-accent-foreground shadow-sm hover:shadow-md md:w-auto ">
             <i class="pi pi-file-word"></i>
             <div class="flex flex-col text-left md:ml-4">
                 <p class="text-sm font-medium leading-none">Translate Texts</p>
@@ -10,10 +10,11 @@
         </button>
     </div>
 
-    <div class="flex flex-row items-center justify-center gap-2 border-b border-theme p-2 md:gap-6">
+    <div class="flex flex-row items-center justify-center gap-2 border-b border-(--border) p-2 md:gap-6">
         <p-select [options]="fromLanguages" [(ngModel)]="selectedFromLanguage" (ngModelChange)="translate()"
             optionLabel="name" optionValue="code" [filter]="true" filterBy="name" [showClear]="true"
-            placeholder="Select a Lang" class="md:min-w-[280px] bg-[var(--card)]">
+            placeholder="Select a Lang" class="md:min-w-[280px]"
+            [style]="{'border-color': 'var(--border)', 'color': 'var(--primary)'}">
         </p-select>
 
         <button (click)="swapLangs()" class="cursor-pointer">
@@ -22,14 +23,15 @@
 
         <p-select [options]="toLanguages" [(ngModel)]="selectedToLanguage" (ngModelChange)="translate()"
             optionLabel="name" optionValue="code" [filter]="true" filterBy="name" [showClear]="true"
-            placeholder="Select a Lang" class="md:min-w-[280px]">
+            placeholder="Select a Lang" class="md:min-w-[280px]" [style]="{'border-color': 'var(--border)'}">
         </p-select>
     </div>
     <div
-        class="flex w-full flex-col items-center md:items-start md:flex-row min-h-[600px] md:min-h-[400px] gap-2 md:gap-0">
-        <div class="relative min-h-full w-full md:w-[50%] flex flex-col justify-between border-r border-theme">
-            <textarea [(ngModel)]="text.value" (ngModelChange)="translate()" class="w-full h-[145px] md:min-h-[400px] bg-[var(--card)]"
-                style="border: none; font-size: 18px;" pTextarea placeholder="Type your source text here..."></textarea>
+        class="flex w-full flex-col items-center md:items-start md:flex-row md:min-h-[400px] gap-2 md:gap-0">
+        <div class="relative min-h-full w-full md:w-[50%] flex flex-col justify-between border-r border-(--border)">
+            <textarea [(ngModel)]="text.value" (ngModelChange)="translate()" class="w-full h-[145px] md:min-h-[400px]"
+                style="border: none; font-size: 18px; background-color: var(--card); color: var(--primary);" pTextarea
+                placeholder="Type your source text here..."></textarea>
             @if (text.value) {
             <button class="absolute right-2 top-2 cursor-pointer" (click)="text.setValue(''); translate()">
                 <i class="pi pi-times"></i>
@@ -47,10 +49,10 @@
                 <p class="flex items-center rounded-md text-sm font-medium mr-2">{{text.value?.length}}/~</p>
             </div>
         </div>
-        <div class="md:w-[50%] w-full flex flex-col justify-between p-4">
+        <div class="md:w-[50%] w-full flex flex-col justify-between p-4 h-full">
             @if (resultText.value) {
-            <p class="text-[18px]">{{resultText.value}}</p>
-            <div class="w-full h-[10%] flex justify-between">
+            <p class="text-[18px] text-(--primary) md:min-h-96 h-[145px]">{{resultText.value}}</p>
+            <div class="w-full flex justify-between">
                 <button
                     class="cursor-pointer justify-center rounded-md text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:scale-105 active:scale-95 hover:bg-accent hover:text-accent-foreground text-muted-foreground h-auto p-2 flex items-center gap-2">
                     <i class="pi pi-clone" style="color: #217aca;"></i>nusxalash
@@ -58,7 +60,7 @@
             </div>
             } @else {
             <p-fileupload #fileUpload name="demo[]" [showUploadButton]="false" [showCancelButton]="false"
-                [style]="{border: 'none'}">
+                [style]="{'border': 'none', 'background-color': 'var(--card)'}">
                 <ng-template pTemplate="content">
                     <div class="flex items-center justify-center flex-col border-none" (click)="openFileChooser()"
                         style="cursor: pointer">

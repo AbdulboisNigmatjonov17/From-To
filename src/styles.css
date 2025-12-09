@@ -11,32 +11,30 @@ body {
     min-height: 100vh;
 }
 
-.border-theme {
-    border-color: #e2e8f0;
-}
-
 [data-theme="light"] {
-    --bg: #fff;
+    --bg: #ffffff4d;
     --text: #1f2937;
-    --card: #fff;
-    --border: #e5e7eb;
-    --primary: #2563eb;
+    --card: #ffffff4d;
+    --border: #e2e8f0;
+    --primary: #020817;
 }
 
 [data-theme="dark"] {
     --bg: #0f131a;
     --text: #f8fafc99;
-    --card: #1e293b;
-    --border: #334155;
-    --primary: #38bdf8;
+    /* --card: #1e293b; */
+    --card: #181D25;
+    /* --border: #303541; */
+    --border: #303541;
+    --primary: #fff;
 }
 
 [data-theme="system"] {
-    --bg: #fff;
+    --bg: #f0f6ff;
     --text: #0f172a;
-    --card: #f0f6ff;
-    --border: #93c5fd;
-    --primary: #1d4ed8;
+    --card: #ffffff4d;
+    --border: #e2e8f0;
+    --primary: #0f172a;
 }
 
 [data-theme="old-theme"] {
@@ -44,7 +42,7 @@ body {
     --text: #111827;
     --card: rgba(255, 255, 255, 0.8);
     --border: rgba(0, 0, 0, 0.2);
-    --primary: #2563eb;
+    --primary: #0f172a;
 
     background-image: url('/old-theme.jpg');
     background-size: cover;

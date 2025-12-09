@@ -1,8 +1,7 @@
-<nav
-    class="w-full border-b h-14 flex items-center justify-center border-[#e2e8f033] bg-[var(--card)]  text-[var(--text)]">
+<nav class="w-full border-b h-14 flex items-center justify-center border-[#e2e8f033] var(--card) var(--primary)">
     <div class="w-full h-10 flex justify-between container">
         <div class="pl-4 md:pl-0 md:min-w-[600px] flex gap-6 items-center text-[#64748B] font-medium">
-            <a routerLink="/" class="flex items-center gap-2 text-lg font-semibold md:text-base text-black">
+            <a routerLink="/" class="flex items-center gap-2 text-lg font-semibold md:text-base var(--text)">
                 <img src="https://from-to.uz/_next/image?url=https%3A%2F%2Fucarecdn.com%2F14b8f635-1310-42ff-bacd-9e8102d62add%2Flogo.png&w=32&q=75"
                     alt="logo">
                 From-To</a>
@@ -25,13 +24,13 @@
             <p-menu #menu2 [model]="themeOptions" [popup]="true"></p-menu>
             <button (click)="menu2.toggle($event)" class="cursor-pointer flex items-center justify-center rounded-md 
          text-sm font-medium transition-all duration-200 hover:scale-105
-         hover:shadow-md active:scale-95 border h-10 w-10 border-theme">
+         hover:shadow-md active:scale-95 border h-10 w-10 border-(--border) text-(--text)">
                 <i class="pi pi-sun"></i>
             </button>
 
             <p-menu #menu3 [model]="options" [popup]="true" />
             <button (click)="menu3.toggle($event)"
-                class="cursor-pointer hidden md:flex items-center justify-center font-medium transition-colors text-black/60 hover:text-black/80 h-10 w-10">
+                class="cursor-pointer text-(--text) hidden md:flex items-center justify-center font-medium transition-colors h-10 w-10">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                     class="lucide lucide-grip size-6">
@@ -78,7 +77,7 @@
                             class="font-medium hover:text-[#020817] transition-colors hover:text-foreground/80 flex items-center justify-between text-foreground/60">{{"navbar.helps.ApiForDeveloper"
                             |
                             translate}}</a>
-                        <hr class="border border-theme">
+                        <hr class="border border-(--border)">
                         <a routerLink="/terms-and-conditions" (click)="visible = false"
                             class="font-medium hover:text-[#020817] transition-colors hover:text-foreground/80 flex items-center justify-between text-foreground/60">{{"navbar.helps.TermsAndConditions"
                             |
@@ -118,8 +117,8 @@
                             translate}}</a>
                     </div>
                 </p-drawer>
-                <p-button (click)="visible = true" icon="pi pi-bars" class="bg-[#f0f6ff]"
-                    [style]="{color: '#02081799', background: '#f0f6ff', border: 'none'}" />
+                <p-button (click)="visible = true" icon="pi pi-bars"
+                    [style]="{color: 'var(--text)', background: 'none', border: 'none'}" />
             </div>
 
             <!-- <p-menu #menu4 [model]="langOptions" [popup]="true" ></p-menu>
@@ -127,7 +126,8 @@
                 <i class="pi pi-language" style="font-size: 24px;"></i>
             </button> -->
             <p-menu #menu4 [model]="langOptions" [popup]="true"></p-menu>
-            <button (click)="menu4.toggle($event)" class="cursor-pointer w-10 h-10 flex items-center justify-center">
+            <button (click)="menu4.toggle($event)"
+                class="text-(--text) cursor-pointer w-10 h-10 flex items-center justify-center">
                 <i class="pi pi-language" style="font-size: 24px;"></i>
             </button>
 

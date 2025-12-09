@@ -1,6 +1,6 @@
 @if (alone === 'true') {
-<p-card class="h-full rounded-lg border border-theme bg-card text-card-foreground shadow-sm">
-    <div class="w-full flex flex-row items-center justify-center gap-2 border-b border-theme p-2 md:gap-6">
+<p-card [style]="{'border': 'none', 'background-color': 'var(--card)', 'color': 'var(--text)'}">
+    <div class="w-full flex flex-row items-center justify-center gap-2 border-b border-(--border) p-2 md:gap-6">
         <p-select [options]="languages" optionLabel="from" optionValue="fromCode" [(ngModel)]="selectedFromLanguage"
             (ngModelChange)="updateToLanguage($event)" [filter]="true" placeholder="Select a Lang"
             class="md:min-w-[280px] w-[150px]">
@@ -15,9 +15,9 @@
         </p-select>
     </div>
     <div class="flex w-full flex-col md:flex-row min-h-[600px] md:min-h-[400px] gap-2 md:gap-0">
-        <div class="relative min-h-full flex flex-col justify-between w-full md:w-[50%] border-r border-theme">
-            <textarea [(ngModel)]="text.value" (ngModelChange)="translate()" class="w-full h-[145px] md:min-h-[400px]"
-                style="border: none; font-size: 18px;" pTextarea placeholder="Type your source text here..."></textarea>
+        <div class="relative min-h-full flex flex-col justify-between w-full md:w-[50%] border-r border-(--border)">
+            <textarea [(ngModel)]="text.value" (ngModelChange)="translate()" class="w-full h-[145px] md:min-h-[400px] bg-(--card)"
+                [style]="{'border': 'none', 'font-size': '18px', 'background-color': 'var(--card)', 'color': 'var(--primary)'}" pTextarea placeholder="Type your source text here..."></textarea>
             @if (text.value) {
             <button class="absolute right-2 top-2 cursor-pointer" (click)="text.setValue(''); translate()">
                 <i class="pi pi-times"></i>
@@ -36,6 +36,72 @@
             </div>
         </div>
         <div class="w-full md:w-[50%] md:flex-1 flex flex-col justify-between p-4">
+
+            @if (resultText.value) {
+            <p class="text-[18px] text-(--primary)">{{resultText.value}}</p>
+            <div class="w-full h-[10%] flex justify-between">
+                <button
+                    class="cursor-pointer justify-center rounded-md text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:scale-105 active:scale-95 hover:bg-accent hover:text-accent-foreground text-muted-foreground h-auto p-2 flex items-center gap-2">
+                    <i class="pi pi-clone" style="color: #217aca;"></i>nusxalash
+                </button>
+            </div>
+            } @else {
+            <p-fileupload #fileUpload name="demo[]" [showUploadButton]="false" [showCancelButton]="false"
+                [style]="{border: 'none', 'background-color': 'var(--card)', 'color': 'var(--text)'}">
+                <ng-template pTemplate="content">
+                    <div class="flex items-center justify-center flex-col border-none" (click)="openFileChooser()"
+                        style="cursor: pointer">
+
+                        <i class="pi pi-cloud-upload" style="font-size: 80px; color: #217aca;"></i>
+                        <p class="mt-3 text-base font-medium text-gray-500">Click or drag file to upload.</p>
+                        <span class="mt-2 text-sm text-gray-500 italic">
+                            Supported: pdf and images | .doc, .docx, .txt, .rtf, html, odt
+                        </span>
+                    </div>
+                </ng-template>
+            </p-fileupload>
+            }
+        </div>
+    </div>
+</p-card>
+} @else {
+<p-card class="min-w-6xl h-full rounded-lg border border-(--border) bg-card text-card-foreground shadow-sm">
+    <div class="flex flex-row items-center justify-center gap-2 border-b border-(--border) p-2 md:gap-6">
+        <p-select [options]="languages" optionLabel="from" optionValue="fromCode" [(ngModel)]="selectedFromLanguage"
+            (ngModelChange)="updateToLanguage($event)" [filter]="true" placeholder="Select a Lang"
+            class="md:min-w-[280px] w-[150px]">
+        </p-select>
+
+        <button (click)="swapLangs()" class="cursor-pointer">
+            <i class="pi pi-arrow-right-arrow-left"></i>
+        </button>
+
+        <p-select [options]="languages" optionLabel="from" optionValue="fromCode" [(ngModel)]="selectedToLanguage"
+            disabled="true" class="md:min-w-[280px] w-[150px]">
+        </p-select>
+    </div>
+    <div class="flex w-full flex-col md:flex-row min-h-[600px] md:min-h-[400px] gap-2 md:gap-0">
+        <div class="relative min-h-full flex flex-col justify-between w-[50%] border-r border-(--border)">
+            <textarea [(ngModel)]="text.value" (ngModelChange)="translate()" class="w-full h-[90%]"
+                style="border: none; font-size: 18px;" pTextarea placeholder="Type your source text here..."></textarea>
+            @if (text.value) {
+            <button class="absolute right-2 top-2 cursor-pointer" (click)="text.setValue(''); translate()">
+                <i class="pi pi-times"></i>
+            </button>
+            }
+            <div class="w-full h-[10%] flex justify-between">
+                <button
+                    class="cursor-pointer justify-center rounded-md text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:scale-105 active:scale-95 hover:bg-accent hover:text-accent-foreground text-muted-foreground h-auto p-2 flex items-center gap-2">
+                    <i class="pi pi-file-plus" style="color: #217aca;"></i>Fayl
+                </button>
+                <button
+                    class="cursor-pointer justify-center rounded-md text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:scale-105 active:scale-95 hover:bg-accent hover:text-accent-foreground text-muted-foreground h-auto p-2 flex items-center gap-2">
+                    <i class="pi pi-clipboard" style="color: #217aca;"></i>Paste
+                </button>
+                <p class="flex items-center rounded-md text-sm font-medium mr-2">{{text.value?.length}}/~</p>
+            </div>
+        </div>
+        <div class="w-[50%] md:flex-1 md:min-w-0 flex flex-col justify-between p-4">
 
             @if (resultText.value) {
             <p class="text-[18px]">{{resultText.value}}</p>
@@ -64,76 +130,4 @@
         </div>
     </div>
 </p-card>
-} @else {
-<div class="p-5">
-    <div class="bg-white rounded-2xl">
-        <p-card class="min-w-6xl h-full rounded-lg border border-theme bg-card text-card-foreground shadow-sm">
-            <div class="flex flex-row items-center justify-center gap-2 border-b border-theme p-2 md:gap-6">
-                <p-select [options]="languages" optionLabel="from" optionValue="fromCode"
-                    [(ngModel)]="selectedFromLanguage" (ngModelChange)="updateToLanguage($event)" [filter]="true"
-                    placeholder="Select a Lang" class="md:min-w-[280px] w-[150px]">
-                </p-select>
-
-                <button (click)="swapLangs()" class="cursor-pointer">
-                    <i class="pi pi-arrow-right-arrow-left"></i>
-                </button>
-
-                <p-select [options]="languages" optionLabel="from" optionValue="fromCode"
-                    [(ngModel)]="selectedToLanguage" disabled="true" class="md:min-w-[280px] w-[150px]">
-                </p-select>
-            </div>
-            <div class="flex w-full flex-col md:flex-row min-h-[600px] md:min-h-[400px] gap-2 md:gap-0">
-                <div class="relative min-h-full flex flex-col justify-between w-[50%] border-r border-theme">
-                    <textarea [(ngModel)]="text.value" (ngModelChange)="translate()" class="w-full h-[90%]"
-                        style="border: none; font-size: 18px;" pTextarea
-                        placeholder="Type your source text here..."></textarea>
-                    @if (text.value) {
-                    <button class="absolute right-2 top-2 cursor-pointer" (click)="text.setValue(''); translate()">
-                        <i class="pi pi-times"></i>
-                    </button>
-                    }
-                    <div class="w-full h-[10%] flex justify-between">
-                        <button
-                            class="cursor-pointer justify-center rounded-md text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:scale-105 active:scale-95 hover:bg-accent hover:text-accent-foreground text-muted-foreground h-auto p-2 flex items-center gap-2">
-                            <i class="pi pi-file-plus" style="color: #217aca;"></i>Fayl
-                        </button>
-                        <button
-                            class="cursor-pointer justify-center rounded-md text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:scale-105 active:scale-95 hover:bg-accent hover:text-accent-foreground text-muted-foreground h-auto p-2 flex items-center gap-2">
-                            <i class="pi pi-clipboard" style="color: #217aca;"></i>Paste
-                        </button>
-                        <p class="flex items-center rounded-md text-sm font-medium mr-2">{{text.value?.length}}/~</p>
-                    </div>
-                </div>
-                <div class="w-[50%] md:flex-1 md:min-w-0 flex flex-col justify-between p-4">
-
-                    @if (resultText.value) {
-                    <p class="text-[18px]">{{resultText.value}}</p>
-                    <div class="w-full h-[10%] flex justify-between">
-                        <button
-                            class="cursor-pointer justify-center rounded-md text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:scale-105 active:scale-95 hover:bg-accent hover:text-accent-foreground text-muted-foreground h-auto p-2 flex items-center gap-2">
-                            <i class="pi pi-clone" style="color: #217aca;"></i>nusxalash
-                        </button>
-                    </div>
-                    } @else {
-                    <p-fileupload #fileUpload name="demo[]" [showUploadButton]="false" [showCancelButton]="false"
-                        [style]="{border: 'none'}">
-                        <ng-template pTemplate="content">
-                            <div class="flex items-center justify-center flex-col border-none"
-                                (click)="openFileChooser()" style="cursor: pointer">
-
-                                <i class="pi pi-cloud-upload" style="font-size: 80px; color: #217aca;"></i>
-                                <p class="mt-3 text-base font-medium text-gray-500">Click or drag file to upload.</p>
-                                <span class="mt-2 text-sm text-gray-500 italic">
-                                    Supported: pdf and images | .doc, .docx, .txt, .rtf, html, odt
-                                </span>
-                            </div>
-                        </ng-template>
-                    </p-fileupload>
-                    }
-                </div>
-            </div>
-        </p-card>
-
-    </div>
-</div>
 }
