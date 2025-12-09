@@ -1,7 +1,43 @@
-<div class="">
-    <section class="mx-auto mb-4 flex max-w-[980px] flex-col items-center gap-2 pb-0 pt-4 md:pb-8 md:pt-12">
-        <h1 class="">Create an account</h1>
-        <span>Enter your information to get started</span>
+<div class="w-full h-full flex flex-col items-center py-12">
+    <section class="w-[385px] mb-8 text-center">
+        <h2 class="text-3xl font-bold tracking-tight">Welcome back</h2>
+        <span class="mt-2 text-sm text-(--text)">Sign in to your account to continue</span>
     </section>
+    <section class="rounded-lg bg-card w-full md:w-[385px] border-0 md:shadow-lg px-6 md:px-0">
+        <div class="flex flex-col p-6 space-y-1 pb-4">
+            <h3 class="tracking-tight text-xl font-semibold text-center">Sign in</h3>
+            <span class="text-sm text-muted-foreground text-center text-(--text)">Enter your credentials to access your
+                account</span>
+        </div>
+        <div class="pt-0 md:p-6 space-y-4">
+            <div class="space-y-2 flex flex-col ">
+                <label for="email" class="text-sm font-medium">Email</label>
+                <input name="email" type="text" placeholder="Enter your email"
+                    class="bg-[#f0f6ff] border border-(--border) px-3 py-2 rounded-md outline-none text-[#020817]">
+            </div>
+            <div class="space-y-2 flex flex-col">
+                <label class="text-sm font-medium">Password</label>
+                <div
+                    class="bg-[#f0f6ff] border border-(--border) px-3 py-2 rounded-md flex justify-between items-center gap-2">
+                    <input [type]="seePassword ? 'text' : 'password'" placeholder="Enter your password"
+                        class="outline-none text-[#020817] w-full">
 
+                    <button type="button" class="cursor-pointer" (click)="togglePassword()">
+                        <i class="pi" [ngClass]="seePassword ? 'pi-eye-slash' : 'pi-eye'"></i>
+                    </button>
+                </div>
+            </div>
+            <button
+                class="bg-[#2563EB] text-white cursor-pointer flex items-center justify-center rounded-md text-sm transition-all duration-200 hover:scale-105 active:scale-95 shadow-md hover:shadow-lg px-4 py-2 w-full h-11 font-medium">Sign
+                In</button>
+            <div class="relative flex justify-center text-xs uppercase">
+                <span class="text-(--text) bg-background px-2 text-muted-foreground">Or continue with</span>
+            </div>
+            <button
+                class="bg-[#f6f6f6] text-[#020817] cursor-pointer flex items-center justify-center rounded-md text-sm transition-all duration-200 hover:scale-105 active:scale-95 shadow-md hover:shadow-lg px-4 py-2 w-full h-11 font-medium"><i
+                    class="pi pi-google" style="margin-right: 8px;"></i>Continue with Google</button>
+            <p class="mt-6 text-center text-sm text-[#64748b]">Already have an account? <a routerLink="/auth/sign-up"
+                    class="text-[#2563EB]">Sign up</a></p>
+        </div>
+    </section>
 </div>
