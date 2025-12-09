@@ -47,72 +47,72 @@
             </button>
 
             <div class="card flex md:hidden gap-2 md:gap-0">
-                <p-drawer [(visible)]="visible" header="From-To">
-                    <span class="text-[#64748B] text-sm">Online Translation</span>
-                    <div class="mt-4 text-[16px] text-[#02081799] flex flex-col gap-4">
+                <p-drawer [(visible)]="visible" header="From-To" [style]="{'background': 'var(--bg)', 'color': 'var(--primary)', 'border-color': 'var(--border)'}">
+                    <span class="text-(--primary) text-sm">Online Translation</span>
+                    <div class="mt-4 text-[16px] text-(--text) flex flex-col gap-4">
                         <a routerLink="/" (click)="visible = false"
-                            class="font-medium hover:text-[#020817] transition-colors hover:text-foreground/80 flex items-center justify-between text-foreground/60">{{"navbar.AITranslation"
+                            class="font-medium transition-colors hover:text-foreground/80 flex items-center justify-between text-foreground/60">{{"navbar.AITranslation"
                             |
                             translate}}</a>
                         <a routerLink="/transliterate" (click)="visible = false"
-                            class="font-medium hover:text-[#020817] transition-colors hover:text-foreground/80 flex items-center justify-between text-foreground/60">{{"navbar.CyrillToLatin"
+                            class="font-medium transition-colors hover:text-foreground/80 flex items-center justify-between text-foreground/60">{{"navbar.CyrillToLatin"
                             |
                             translate}}</a>
                         <a routerLink="/pdf-image-to-text" (click)="visible = false"
-                            class="font-medium hover:text-[#020817] transition-colors hover:text-foreground/80 flex items-center justify-between text-foreground/60">{{"navbar.PdfToText"
+                            class="font-medium transition-colors hover:text-foreground/80 flex items-center justify-between text-foreground/60">{{"navbar.PdfToText"
                             |
                             translate}}</a>
                     </div>
-                    <h3 class="mt-4 text-[#020817] font-medium text-lg">Help</h3>
-                    <div class="mt-4 text-[16px] text-[#02081799] flex flex-col gap-4">
+                    <h3 class="mt-4 text-(--primary) font-medium text-lg">Help</h3>
+                    <div class="mt-4 text-[16px] text-(--text) flex flex-col gap-4">
                         <a routerLink="/help-for-translator" (click)="visible = false"
-                            class="font-medium hover:text-[#020817] transition-colors hover:text-foreground/80 flex items-center justify-between text-foreground/60">{{"navbar.helps.HelpForTranslator"
+                            class="font-medium transition-colors hover:text-foreground/80 flex items-center justify-between text-foreground/60">{{"navbar.helps.HelpForTranslator"
                             |
                             translate}}</a>
                         <a routerLink="/how-to-use" (click)="visible = false"
-                            class="font-medium hover:text-[#020817] transition-colors hover:text-foreground/80 flex items-center justify-between text-foreground/60">{{"navbar.helps.HowToUse"
+                            class="font-medium transition-colors hover:text-foreground/80 flex items-center justify-between text-foreground/60">{{"navbar.helps.HowToUse"
                             |
                             translate}}</a>
                         <a routerLink="/developer-api" (click)="visible = false"
-                            class="font-medium hover:text-[#020817] transition-colors hover:text-foreground/80 flex items-center justify-between text-foreground/60">{{"navbar.helps.ApiForDeveloper"
+                            class="font-medium transition-colors hover:text-foreground/80 flex items-center justify-between text-foreground/60">{{"navbar.helps.ApiForDeveloper"
                             |
                             translate}}</a>
                         <hr class="border border-(--border)">
                         <a routerLink="/terms-and-conditions" (click)="visible = false"
-                            class="font-medium hover:text-[#020817] transition-colors hover:text-foreground/80 flex items-center justify-between text-foreground/60">{{"navbar.helps.TermsAndConditions"
+                            class="font-medium transition-colors hover:text-foreground/80 flex items-center justify-between text-foreground/60">{{"navbar.helps.TermsAndConditions"
                             |
                             translate}}</a>
                         <a routerLink="/about-us" (click)="visible = false"
-                            class="font-medium transition-colors hover:text-[#020817] hover:text-foreground/80 flex items-center justify-between text-foreground/60">{{"navbar.helps.AboutUs"
+                            class="font-medium transition-colors hover:text-foreground/80 flex items-center justify-between text-foreground/60">{{"navbar.helps.AboutUs"
                             |
                             translate}}</a>
                         <a routerLink="/advertisement" (click)="visible = false"
-                            class="font-medium transition-colors hover:text-[#020817] hover:text-foreground/80 flex items-center justify-between text-foreground/60">{{"navbar.helps.Advertisement"
+                            class="font-medium transition-colors hover:text-foreground/80 flex items-center justify-between text-foreground/60">{{"navbar.helps.Advertisement"
                             |
                             translate}}</a>
                     </div>
-                    <div class="mt-8 text-[16px] text-[#02081799] flex flex-col gap-4">
+                    <div class="mt-8 text-[16px] text-(--text) flex flex-col gap-4">
                         <a routerLink="/telegram-bot" (click)="visible = false"
-                            class="font-medium transition-colors hover:text-[#020817] hover:text-foreground/80 flex items-center justify-between text-foreground/60">{{"navbar.options.TelegramBot"
+                            class="font-medium transition-colors hover:text-foreground/80 flex items-center justify-between text-foreground/60">{{"navbar.options.TelegramBot"
                             |
                             translate}}</a>
                         <a routerLink="/dictionary" (click)="visible = false"
-                            class="font-medium transition-colors hover:text-[#020817] hover:text-foreground/80 flex items-center justify-between text-foreground/60">{{"navbar.options.Dictionary"
+                            class="font-medium transition-colors hover:text-foreground/80 flex items-center justify-between text-foreground/60">{{"navbar.options.Dictionary"
                             |
                             translate}}</a>
                         <a routerLink="/context" (click)="visible = false"
-                            class="font-medium transition-colors hover:text-[#020817] hover:text-foreground/80 flex items-center justify-between text-foreground/60">{{"navbar.options.Context"
+                            class="font-medium transition-colors hover:text-foreground/80 flex items-center justify-between text-foreground/60">{{"navbar.options.Context"
                             |
                             translate}}</a>
                     </div>
-                    <h3 class="my-4 text-[#020817] font-medium text-lg">Profile</h3>
-                    <div class="mt-4 text-[16px] text-[#02081799] flex flex-col gap-4">
+                    <h3 class="my-4 text-(--primary) font-medium text-lg">Profile</h3>
+                    <div class="mt-4 text-[16px] text-(--text) flex flex-col gap-4">
                         <a routerLink="/auth/sign-in" (click)="visible = false"
-                            class="font-medium transition-colors hover:text-[#020817] hover:text-foreground/80 flex items-center justify-between text-foreground/60">{{"navbar.profileOptions.Login"
+                            class="font-medium transition-colors hover:text-foreground/80 flex items-center justify-between text-foreground/60">{{"navbar.profileOptions.Login"
                             |
                             translate}}</a>
                         <a routerLink="/auth/sign-up" (click)="visible = false"
-                            class="font-medium transition-colors hover:text-[#020817] hover:text-foreground/80 flex items-center justify-between text-foreground/60">{{"navbar.profileOptions.Register"
+                            class="font-medium transition-colors hover:text-foreground/80 flex items-center justify-between text-foreground/60">{{"navbar.profileOptions.Register"
                             |
                             translate}}</a>
                     </div>

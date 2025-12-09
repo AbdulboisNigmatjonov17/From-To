@@ -1,7 +1,7 @@
 <p-card [style]="{'background-color': 'var(--card)', 'color': 'var(--primary)'}">
-    <div class="flex flex-col items-center gap-2 p-2 md:flex-row md:gap-4">
+    <div class="flex flex-col items-center p-2 md:flex-row ">
         <button
-            class="cursor-pointer px-4 py-2 inline-flex items-center justify-left rounded-md text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:scale-105 active:scale-95 border border-(--border) hover:bg-accent hover:text-accent-foreground shadow-sm hover:shadow-md md:w-auto ">
+            class="flex gap-2 md:gap-0 cursor-pointer px-4 py-2 items-center justify-left rounded-md text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:scale-105 active:scale-95 border border-(--border) hover:bg-accent hover:text-accent-foreground shadow-sm hover:shadow-md md:w-auto ">
             <i class="pi pi-file-word"></i>
             <div class="flex flex-col text-left md:ml-4">
                 <p class="text-sm font-medium leading-none">Translate Texts</p>
@@ -26,8 +26,7 @@
             placeholder="Select a Lang" class="md:min-w-[280px]" [style]="{'border-color': 'var(--border)'}">
         </p-select>
     </div>
-    <div
-        class="flex w-full flex-col items-center md:items-start md:flex-row md:min-h-[400px] gap-2 md:gap-0">
+    <div class="flex w-full flex-col items-center md:items-start md:flex-row md:min-h-[400px] gap-2 md:gap-0">
         <div class="relative min-h-full w-full md:w-[50%] flex flex-col justify-between border-r border-(--border)">
             <textarea [(ngModel)]="text.value" (ngModelChange)="translate()" class="w-full h-[145px] md:min-h-[400px]"
                 style="border: none; font-size: 18px; background-color: var(--card); color: var(--primary);" pTextarea
