@@ -12,9 +12,9 @@ body {
 }
 
 [data-theme="light"] {
-    --bg: #ffffff4d;
+    --bg: #ffffff;
     --text: #1f2937;
-    --card: #ffffff4d;
+    --card: #ffffff;
     --border: #e2e8f0;
     --primary: #020817;
 }
